@@ -28,10 +28,10 @@
 "_3_mdk_dancerobot\inv_mpu.o"
 "_3_mdk_dancerobot\inv_mpu_dmp_motion_driver.o"
 "_3_mdk_dancerobot\mpu6050_dmp.o"
-"_3_mdk_dancerobot\tx-16a.o"
 "_3_mdk_dancerobot\single_action.o"
 "_3_mdk_dancerobot\task.o"
 "_3_mdk_dancerobot\circular_dance.o"
+"_3_mdk_dancerobot\lx-16a.o"
 --strict --scatter "_3_MDK_DanceRobot\_3_MDK_DanceRobot.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

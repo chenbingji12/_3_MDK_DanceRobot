@@ -62,6 +62,9 @@ int MPU6050_DMP_Init(void)
     /* ---- 步骤 8: 设置中断模式为连续 ---- */
     dmp_set_interrupt_mode(DMP_INT_CONTINUOUS);
 
+    mpu_set_int_level(0);      // 高电平有效（默认）
+    mpu_set_int_latched(1);    // 锁存模式，读取 MPU 寄存器后自动清除中断
+
     /* ---- 步骤 9: 使能 DMP ---- */
     ret = mpu_set_dmp_state(1);
     if (ret != 0)

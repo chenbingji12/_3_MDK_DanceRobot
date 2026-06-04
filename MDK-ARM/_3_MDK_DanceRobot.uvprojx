@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F411xE,MPU6050,EMPL</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../DMP_MPU6050;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../J-Link_RTT;../TX-16A;../Single_action;../Task;../Circular_dance;..\Wait</IncludePath>
+              <IncludePath>../Core/Inc;../DMP_MPU6050;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../J-Link_RTT;../Single_action;../Task;../Circular_dance;..\LX-16A</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -871,21 +871,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>TX-16A</GroupName>
-          <Files>
-            <File>
-              <FileName>TX-16A.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\TX-16A\TX-16A.c</FilePath>
-            </File>
-            <File>
-              <FileName>TX-16A.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\TX-16A\TX-16A.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Single_action</GroupName>
           <Files>
             <File>
@@ -927,6 +912,21 @@
               <FileName>Circular_dance.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Circular_dance\Circular_dance.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>LX-16A</GroupName>
+          <Files>
+            <File>
+              <FileName>LX-16A.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\LX-16A\LX-16A.c</FilePath>
+            </File>
+            <File>
+              <FileName>LX-16A.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\LX-16A\LX-16A.h</FilePath>
             </File>
           </Files>
         </Group>

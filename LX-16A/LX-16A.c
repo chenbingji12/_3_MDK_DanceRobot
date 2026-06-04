@@ -1,4 +1,4 @@
-#include "TX-16A.h"
+#include "LX-16A.h"
 #include "main.h"
 extern UART_HandleTypeDef huart1;
 

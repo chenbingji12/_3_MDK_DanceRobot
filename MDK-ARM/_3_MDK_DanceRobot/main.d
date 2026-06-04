@@ -38,7 +38,7 @@ _3_mdk_dancerobot\main.o: ../J-Link_RTT/SEGGER_RTT.h
 _3_mdk_dancerobot\main.o: ../J-Link_RTT/SEGGER_RTT_Conf.h
 _3_mdk_dancerobot\main.o: D:\MDK526\ARM\ARMCC\Bin\..\include\string.h
 _3_mdk_dancerobot\main.o: ../DMP_MPU6050/mpu6050_dmp.h
-_3_mdk_dancerobot\main.o: ../TX-16A/TX-16A.h
+_3_mdk_dancerobot\main.o: ..\LX-16A\LX-16A.h
 _3_mdk_dancerobot\main.o: ../Single_action/Single_action.h
 _3_mdk_dancerobot\main.o: ../Task/Task.h
 _3_mdk_dancerobot\main.o: ../Circular_dance/Circular_dance.h

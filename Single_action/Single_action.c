@@ -32,32 +32,32 @@ static const uint16_t Right_Hand_Down_Data[][3]=
     {1,500,1000}
 };
 
-const uint16_t Left_Step_Forward_Data[][3]=
+static const uint16_t Left_Step_Forward_Data[][3]=
 {
     {1,500,1000}
 };
 
-const uint16_t Right_Step_Forward_Data[][3]=
+static const uint16_t Right_Step_Forward_Data[][3]=
 {
     {1,500,1000}
 };
 
-const uint16_t Left_Step_Backward_Data[][3]=
+static const uint16_t Left_Step_Backward_Data[][3]=
 {
     {1,500,1000}
 };
 
-const uint16_t Right_Step_Backward_Data[][3]=
+static const uint16_t Right_Step_Backward_Data[][3]=
 {
     {1,500,1000}
 };
 
-const uint16_t Left_MoveAside_Data[][3]=
+static const uint16_t Left_MoveAside_Data[][3]=
 {
     {1,500,1000}
 };
 
-const uint16_t Right_MoveAside_Data[][3]=
+static const uint16_t Right_MoveAside_Data[][3]=
 {
     {1,500,1000}
 };
@@ -134,7 +134,7 @@ Take_Action(Right_MoveAside_Data,sizeof(Right_MoveAside_Data)/sizeof(Right_MoveA
 }
 
 /***************设置动作执行标志*****************/
-void Set_Move_Flag(char name[30])     //根据传入的动作名称字符串，在动作表中查找对应的循环动作并设置相应的动作执行标志
+static void Set_Move_Flag(char name[30])     //根据传入的动作名称字符串，在动作表中查找对应的循环动作并设置相应的动作执行标志
 {
     if(strcmp(name,"walk_forward")==0)
     {

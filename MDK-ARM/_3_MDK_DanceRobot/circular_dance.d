@@ -35,5 +35,5 @@ _3_mdk_dancerobot\circular_dance.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4x
 _3_mdk_dancerobot\circular_dance.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 _3_mdk_dancerobot\circular_dance.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 _3_mdk_dancerobot\circular_dance.o: ../Core/Inc/main.h
-_3_mdk_dancerobot\circular_dance.o: ../TX-16A/TX-16A.h
+_3_mdk_dancerobot\circular_dance.o: ..\LX-16A\LX-16A.h
 _3_mdk_dancerobot\circular_dance.o: ../Single_action/Single_action.h

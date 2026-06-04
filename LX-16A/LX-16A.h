@@ -1,5 +1,5 @@
-#ifndef __TX_16A_H
-#define __TX_16A_H
+#ifndef __LX_16A_H
+#define __LX_16A_H
 
 #include "stm32f4xx.h"                  // Device header
 

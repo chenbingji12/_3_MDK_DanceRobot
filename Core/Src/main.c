@@ -26,7 +26,7 @@
 #include "SEGGER_RTT_Conf.h"
 #include "string.h"
 #include "mpu6050_dmp.h"
-#include "TX-16A.h"
+#include "LX-16A.h"
 #include "Single_action.h"
 #include "Task.h"
 #include "Circular_dance.h"
@@ -155,8 +155,8 @@ int main(void)
   
   SEGGER_RTT_Init ();   //J-Link RTT 初始化
 
-HAL_UART_Receive_DMA(&huart1,(uint8_t*) uart1_rx_buf, sizeof(uart1_rx_buf));   //开启 USART1 的 DMA 接收，接收数据存入 uart1_rx_buf
-HAL_UART_Receive_DMA(&huart6, (uint8_t*) uart6_rx_buf, sizeof(uart6_rx_buf));   //开启 USART6 的 DMA 接收，接收数据存入 uart6_rx_buf
+HAL_UARTEx_ReceiveToIdle_DMA(&huart1,(uint8_t*) uart1_rx_buf, sizeof(uart1_rx_buf));   //开启 USART1 的 DMA 接收，接收数据存入 uart1_rx_buf
+HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_buf));   //开启 USART6 的 DMA 接收，接收数据存入 uart6_rx_buf
 
 /*陀螺仪初始化*/
   SEGGER_RTT_printf(0, "DMP Init...\n");
@@ -184,9 +184,32 @@ HAL_UART_Receive_DMA(&huart6, (uint8_t*) uart6_rx_buf, sizeof(uart6_rx_buf));   
     if(flag.DMA_Send == 1)
     {
       Single_Action((char*)uart6_rx_buf);   //调用动作函数
+      SEGGER_RTT_printf(0,"11111111111111111111111");
       flag.DMA_Send = 0;
     }
 
+    if(flag.mpu6050_data_ready==1)
+    {
+      if (MPU6050_DMP_GetEuler((float*)&pitch, (float*)&roll, (float*)&yaw) == 0)//强制转化为 float* 类型
+    {
+        /* SEGGER_RTT_printf 不支持 %f, 用整数+小数方式打印 */
+        int p_int = (int)pitch;
+        int p_frac = (int)((pitch > 0 ? pitch : -pitch) * 100.0f) % 100;
+        int r_int = (int)roll;
+        int r_frac = (int)((roll > 0 ? roll : -roll) * 100.0f) % 100;
+        int y_int = (int)yaw;
+        int y_frac = (int)((yaw > 0 ? yaw : -yaw) * 100.0f) % 100;
+        SEGGER_RTT_printf(0, "[%lu] P:%d.%02d R:%d.%02d Y:%d.%02d\n",
+                          HAL_GetTick(), p_int, p_frac, r_int, r_frac, y_int, y_frac);
+        flag.mpu6050_data_ready=0;
+    }
+    }
+    /*for(int i=0;i<1000;i++)
+    {
+Servo_Write(1,i,0);
+HAL_Delay(1);
+SEGGER_RTT_printf(0,"============================%d",i);
+    }*/
 // 获取当前系统运行的毫秒级时间戳
       uint32_t current_time = HAL_GetTick(); 
 
@@ -204,7 +227,7 @@ HAL_UART_Receive_DMA(&huart6, (uint8_t*) uart6_rx_buf, sizeof(uart6_rx_buf));   
               }
           }
       }
-
+SEGGER_RTT_printf(0,"qqqqqqqqqqqqqqqqqqqqqqqqqqqq%d\n",HAL_GetTick());
     HAL_IWDG_Refresh(&hiwdg);   // 喂独立看门狗，防止复位,2048ms
 		
   }
@@ -596,6 +619,16 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : PB15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_15;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 1, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
   /* USER CODE END MX_GPIO_Init_2 */
@@ -603,7 +636,15 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if (GPIO_Pin == GPIO_PIN_15)    //如果接收到数据，置标志位（DMP中断），20ms中断一次
+    {
+        flag.mpu6050_data_ready = 1;
+    }
+}
+
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart,uint16_t Size)
 {
     if (huart->Instance == USART1)
     {
@@ -611,7 +652,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     }
     if (huart->Instance == USART6)
     {
-        uart6_rx_buf[29] = '\0';   //确保字符串以 null 结尾
+        uart6_rx_buf[Size] = '\0';   //确保字符串以 null 结尾
+        HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_buf));  //重新开启DMA接收
         flag.DMA_Send=1;    //DMA发送标志位为1，表示数据已接收完毕
     }
   }
@@ -643,20 +685,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         }
   }
 
-    if (htim->Instance == TIM11)    //15ms 中断一次，读取 MPU6050 DMP 的欧拉角数据并通过 RTT 输出到调试终端
+    if (htim->Instance == TIM11)    //15ms 中断一次
     {
-        if (MPU6050_DMP_GetEuler((float*)&pitch, (float*)&roll, (float*)&yaw) == 0)//强制转化为 float* 类型
-    {
-        /* SEGGER_RTT_printf 不支持 %f, 用整数+小数方式打印 */
-        int p_int = (int)pitch;
-        int p_frac = (int)((pitch > 0 ? pitch : -pitch) * 100.0f) % 100;
-        int r_int = (int)roll;
-        int r_frac = (int)((roll > 0 ? roll : -roll) * 100.0f) % 100;
-        int y_int = (int)yaw;
-        int y_frac = (int)((yaw > 0 ? yaw : -yaw) * 100.0f) % 100;
-        SEGGER_RTT_printf(0, "[%lu] P:%d.%02d R:%d.%02d Y:%d.%02d\n",
-                          HAL_GetTick(), p_int, p_frac, r_int, r_frac, y_int, y_frac);
-    }
+        
     }
 
     if (htim->Instance == TIM4)     //100ms 中断一次，实现较长时间的非阻滞延时
@@ -666,7 +697,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
     if (htim->Instance == TIM5)     //10ms 中断一次，实现较短时间的非阻滞延时
     {
-        
+        SEGGER_RTT_printf(0,"ww\n");
     }
   }
 

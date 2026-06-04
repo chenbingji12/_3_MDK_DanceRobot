@@ -35,5 +35,5 @@ _3_mdk_dancerobot\single_action.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx
 _3_mdk_dancerobot\single_action.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 _3_mdk_dancerobot\single_action.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 _3_mdk_dancerobot\single_action.o: ../Core/Inc/main.h
-_3_mdk_dancerobot\single_action.o: ../TX-16A/TX-16A.h
+_3_mdk_dancerobot\single_action.o: ..\LX-16A\LX-16A.h
 _3_mdk_dancerobot\single_action.o: D:\MDK526\ARM\ARMCC\Bin\..\include\string.h
