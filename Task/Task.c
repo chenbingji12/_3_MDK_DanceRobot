@@ -6,7 +6,7 @@ TaskDef task_table[] = {
     {Move_Action,10, 0, 1}
 };
 
-const uint8_t num_tasks = sizeof(task_table) / sizeof(task_table[0]);   // 计算任务数量
+const uint8_t task_count=sizeof(task_table) / sizeof(task_table[0]);
 
 /**********************前后左右移动************************/
 MoveAction move_actions[] = {
@@ -15,8 +15,6 @@ MoveAction move_actions[] = {
 {&flag.move_to_left, Left_MoveAside,Reset_Whole,1000, 3},   //左移动作，预定步数3，左右脚交替向左移动，每步间隔1000ms
 {&flag.move_to_right, Right_MoveAside,Reset_Whole,1000, 3}    //右移动作，预定步数3，左右脚交替向右移动，每步间隔1000ms
 };
-
-const uint8_t num_actions = sizeof(move_actions) / sizeof(move_actions[0]);   // 计算动作数量
 
 void Move_Action(void)
 {
@@ -31,7 +29,7 @@ void Move_Action(void)
     switch(state)
     {
         case IDLE:
-        for(int i=0;i<num_actions;i++)     //遍历动作表，检查哪个动作的执行标志被置位
+        for(int i=0;i<ACTION_NUM;i++)     //遍历动作表，检查哪个动作的执行标志被置位
         {
             if(*(move_actions[i].move_flag)==1)        //接收到动作指令，进入状态机
             {

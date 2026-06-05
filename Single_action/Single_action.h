@@ -4,6 +4,8 @@
 #include "main.h"
 #include "LX-16A.h"
 
+#define ACTION_COUNT (sizeof(action)/sizeof(action[0]))     //定义计算出的任务个数
+
 typedef struct {
     char name[30];      //动作名称
     const uint16_t (*data)[3];   //动作数据指针，指向一个二维数组，每行包含舵机编号、目标角度和执行时间
@@ -13,7 +15,7 @@ typedef struct {
 
 void Take_Action(const uint16_t a[][3], uint8_t count);
 
-void Single_Action(char name[30]);
+void Single_Action(char name[UART6_RX_SIZE]);
 
 void Reset_Whole(void);
 void Left_Step_Forward(void);

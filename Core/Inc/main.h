@@ -76,6 +76,9 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN Private defines */
 
+#define UART1_RX_SIZE (64)
+#define UART6_RX_SIZE (30)
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

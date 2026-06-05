@@ -35,3 +35,4 @@ _3_mdk_dancerobot\lx-16a.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ti
 _3_mdk_dancerobot\lx-16a.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 _3_mdk_dancerobot\lx-16a.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 _3_mdk_dancerobot\lx-16a.o: ../Core/Inc/main.h
+_3_mdk_dancerobot\lx-16a.o: D:\MDK526\ARM\ARMCC\Bin\..\include\string.h

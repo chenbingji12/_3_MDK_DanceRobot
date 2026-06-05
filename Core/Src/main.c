@@ -82,8 +82,8 @@ volatile uint32_t tick = 0;    //时间截，单位毫秒
 
 volatile float pitch = 0.0f, roll = 0.0f, yaw = 0.0f;    //欧拉角，单位度
 
-volatile uint8_t uart1_rx_buf[64];   // USART1 接收缓冲区，64 字节
-volatile uint8_t uart6_rx_buf[30];   // USART6 接收缓冲区，30 字节
+volatile uint8_t uart1_rx_buf[UART1_RX_SIZE];   // USART1 接收缓冲区，64 字节
+volatile uint8_t uart6_rx_buf[UART6_RX_SIZE];   // USART6 接收缓冲区，30 字节
 
 /* USER CODE END PV */
 
@@ -214,7 +214,7 @@ SEGGER_RTT_printf(0,"============================%d",i);
       uint32_t current_time = HAL_GetTick(); 
 
       // 遍历任务表
-      for (int i = 0; i < num_tasks; i++) 
+      for (int i = 0; i < task_count; i++) 
       {
           // 如果任务是激活状态
           if (task_table[i].is_active) 
@@ -657,6 +657,19 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart,uint16_t Size)
         flag.DMA_Send=1;    //DMA发送标志位为1，表示数据已接收完毕
     }
   }
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance == USART1)
+    {
+        // DMA 发送完成，从 FIFO 取下一包继续发
+        if (Fifo_Read(&fifo, fifo_packet))
+        {
+            HAL_UART_Transmit_DMA(&huart1, fifo_packet, 10);
+        }
+        // FIFO 空了→自动停止，等待下次 Servo_Write 触发
+    }
+}
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {

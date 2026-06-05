@@ -5,6 +5,8 @@
 #include "LX-16A.h"
 #include "Single_action.h"
 
+#define ACTION_NUM (sizeof(move_actions) / sizeof(move_actions[0]))     //定义计算出的动作个数
+
 /*表驱动的时间触发合作式调度器*/
 // 1. 定义任务控制块 (TCB) 结构体
 typedef struct {
@@ -15,7 +17,7 @@ typedef struct {
 } TaskDef;
 
 extern TaskDef task_table[];   // 任务表，存放所有任务的控制块
-extern const uint8_t num_tasks;     // 任务数量
+extern const uint8_t task_count;
 
 typedef struct {
    volatile uint8_t *move_flag;          //动作指令
@@ -26,7 +28,6 @@ typedef struct {
 } MoveAction;
 
 extern MoveAction move_actions[];   // 动作表，存放所有动作的控制块
-extern const uint8_t num_actions;     // 动作数量
 
 void Move_Action(void);    //移动任务函数
 

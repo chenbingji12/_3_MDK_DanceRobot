@@ -134,7 +134,7 @@ Take_Action(Right_MoveAside_Data,sizeof(Right_MoveAside_Data)/sizeof(Right_MoveA
 }
 
 /***************设置动作执行标志*****************/
-static void Set_Move_Flag(char name[30])     //根据传入的动作名称字符串，在动作表中查找对应的循环动作并设置相应的动作执行标志
+static void Set_Move_Flag(char name[UART6_RX_SIZE])     //根据传入的动作名称字符串，在动作表中查找对应的循环动作并设置相应的动作执行标志
 {
     if(strcmp(name,"walk_forward")==0)
     {
@@ -152,7 +152,7 @@ static void Set_Move_Flag(char name[30])     //根据传入的动作名称字符
     {
         flag.move_to_right=1;
     }
-    memset(name, 0, 30);   //清空传入的动作名称字符串，避免重复设置同一动作的执行标志
+    memset(name, 0, UART6_RX_SIZE);   //清空传入的动作名称字符串，避免重复设置同一动作的执行标志
 }
 
 /**********************执行动作函数*****************/
@@ -191,19 +191,17 @@ static const Action action[]=
     {"squat",Squat_Data,sizeof(Squat_Data)/sizeof(Squat_Data[0]),0}
 };      //动作表，存放所有动作的名称和对应的函数指针
 
-const uint8_t action_count=sizeof(action)/sizeof(action[0]);        //计算动作数量
-
 /**************查找动作名称字符串在动作表中的位置***********/
-void Single_Action(char name[30])       //根据传入的动作名称字符串，在动作表中查找对应的函数指针并执行相应动作
+void Single_Action(char name[UART6_RX_SIZE])       //根据传入的动作名称字符串，在动作表中查找对应的函数指针并执行相应动作
 {
-    for (int i = 0; i < action_count; i++)
+    for (int i = 0; i < ACTION_COUNT; i++)
     {
         if (strcmp(action[i].name, name) == 0)
         {
          if(action[i].is_circular==0)     //如果是单次动作，直接调用函数执行
          {
             Take_Action(action[i].data, action[i].count);
-            memset(name, 0, 30);   //清空传入的动作名称字符串，避免重复执行同一动作
+            memset(name, 0, UART6_RX_SIZE);   //清空传入的动作名称字符串，避免重复执行同一动作
             return;
         }
       else

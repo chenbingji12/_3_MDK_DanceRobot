@@ -1,7 +1,7 @@
 Dependencies for Project '_3_MDK_DanceRobot', Target '_3_MDK_DanceRobot': (DO NOT MODIFY !)
 F (startup_stm32f411xe.s)(0x6A215052)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 526" --pd "_RTE_ SETA 1" --pd "STM32F411xE SETA 1"--list startup_stm32f411xe.lst --xref -o _3_mdk_dancerobot\startup_stm32f411xe.o --depend _3_mdk_dancerobot\startup_stm32f411xe.d)
-F (../Core/Src/main.c)(0x6A215800)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\main.o --omf_browse _3_mdk_dancerobot\main.crf --depend _3_mdk_dancerobot\main.d)
-I (../Core/Inc/main.h)(0x6A21544D)
+F (../Core/Src/main.c)(0x6A22F6EA)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\main.o --omf_browse _3_mdk_dancerobot\main.crf --depend _3_mdk_dancerobot\main.d)
+I (../Core/Inc/main.h)(0x6A22D8D6)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
@@ -39,12 +39,12 @@ I (../J-Link_RTT/SEGGER_RTT.h)(0x64CBAAFD)
 I (../J-Link_RTT/SEGGER_RTT_Conf.h)(0x6A17AC82)
 I (D:\MDK526\ARM\ARMCC\include\string.h)(0x599EDB3C)
 I (../DMP_MPU6050/mpu6050_dmp.h)(0x6A1809E3)
-I (..\LX-16A\LX-16A.h)(0x6A2157F8)
-I (../Single_action/Single_action.h)(0x6A215800)
-I (../Task/Task.h)(0x6A215800)
+I (..\LX-16A\LX-16A.h)(0x6A22E854)
+I (../Single_action/Single_action.h)(0x6A22D809)
+I (../Task/Task.h)(0x6A22F6E0)
 I (../Circular_dance/Circular_dance.h)(0x6A2157C0)
 F (../Core/Src/stm32f4xx_it.c)(0x6A215050)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_it.o --omf_browse _3_mdk_dancerobot\stm32f4xx_it.crf --depend _3_mdk_dancerobot\stm32f4xx_it.d)
-I (../Core/Inc/main.h)(0x6A21544D)
+I (../Core/Inc/main.h)(0x6A22D8D6)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
@@ -80,7 +80,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
 I (../Core/Inc/stm32f4xx_it.h)(0x6A215050)
 F (../Core/Src/stm32f4xx_hal_msp.c)(0x6A1AFAD2)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_msp.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_msp.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x6A21544D)
+I (../Core/Inc/main.h)(0x6A22D8D6)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
@@ -894,8 +894,8 @@ I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
 I (../DMP_MPU6050/inv_mpu.h)(0x6A180951)
 I (../DMP_MPU6050/inv_mpu_dmp_motion_driver.h)(0x6A180952)
 I (D:\MDK526\ARM\ARMCC\include\math.h)(0x599EDB3E)
-F (..\Single_action\Single_action.c)(0x6A215490)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\single_action.o --omf_browse _3_mdk_dancerobot\single_action.crf --depend _3_mdk_dancerobot\single_action.d)
-I (..\Single_action\Single_action.h)(0x6A215800)
+F (..\Single_action\Single_action.c)(0x6A22D84E)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\single_action.o --omf_browse _3_mdk_dancerobot\single_action.crf --depend _3_mdk_dancerobot\single_action.d)
+I (..\Single_action\Single_action.h)(0x6A22D809)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
 I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
@@ -929,12 +929,12 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-I (../Core/Inc/main.h)(0x6A21544D)
-I (..\LX-16A\LX-16A.h)(0x6A2157F8)
+I (../Core/Inc/main.h)(0x6A22D8D6)
+I (..\LX-16A\LX-16A.h)(0x6A22E854)
 I (D:\MDK526\ARM\ARMCC\include\string.h)(0x599EDB3C)
-F (..\Single_action\Single_action.h)(0x6A215800)()
-F (..\Task\Task.c)(0x6A1E7259)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\task.o --omf_browse _3_mdk_dancerobot\task.crf --depend _3_mdk_dancerobot\task.d)
-I (../Core/Inc/main.h)(0x6A21544D)
+F (..\Single_action\Single_action.h)(0x6A22D809)()
+F (..\Task\Task.c)(0x6A22F6D2)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\task.o --omf_browse _3_mdk_dancerobot\task.crf --depend _3_mdk_dancerobot\task.d)
+I (../Core/Inc/main.h)(0x6A22D8D6)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
@@ -968,10 +968,10 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-I (..\Task\Task.h)(0x6A215800)
-I (..\LX-16A\LX-16A.h)(0x6A2157F8)
-I (../Single_action/Single_action.h)(0x6A215800)
-F (..\Task\Task.h)(0x6A215800)()
+I (..\Task\Task.h)(0x6A22F6E0)
+I (..\LX-16A\LX-16A.h)(0x6A22E854)
+I (../Single_action/Single_action.h)(0x6A22D809)
+F (..\Task\Task.h)(0x6A22F6E0)()
 F (..\Circular_dance\Circular_dance.c)(0x6A1A6B5A)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\circular_dance.o --omf_browse _3_mdk_dancerobot\circular_dance.crf --depend _3_mdk_dancerobot\circular_dance.d)
 I (..\Circular_dance\Circular_dance.h)(0x6A2157C0)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
@@ -1007,12 +1007,12 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-I (../Core/Inc/main.h)(0x6A21544D)
-I (..\LX-16A\LX-16A.h)(0x6A2157F8)
-I (../Single_action/Single_action.h)(0x6A215800)
+I (../Core/Inc/main.h)(0x6A22D8D6)
+I (..\LX-16A\LX-16A.h)(0x6A22E854)
+I (../Single_action/Single_action.h)(0x6A22D809)
 F (..\Circular_dance\Circular_dance.h)(0x6A2157C0)()
-F (..\LX-16A\LX-16A.c)(0x6A2157FE)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\lx-16a.o --omf_browse _3_mdk_dancerobot\lx-16a.crf --depend _3_mdk_dancerobot\lx-16a.d)
-I (..\LX-16A\LX-16A.h)(0x6A2157F8)
+F (..\LX-16A\LX-16A.c)(0x6A22EFC8)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\lx-16a.o --omf_browse _3_mdk_dancerobot\lx-16a.crf --depend _3_mdk_dancerobot\lx-16a.d)
+I (..\LX-16A\LX-16A.h)(0x6A22E854)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
 I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
@@ -1046,5 +1046,6 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-I (../Core/Inc/main.h)(0x6A21544D)
-F (..\LX-16A\LX-16A.h)(0x6A2157F8)()
+I (../Core/Inc/main.h)(0x6A22D8D6)
+I (D:\MDK526\ARM\ARMCC\include\string.h)(0x599EDB3C)
+F (..\LX-16A\LX-16A.h)(0x6A22E854)()
