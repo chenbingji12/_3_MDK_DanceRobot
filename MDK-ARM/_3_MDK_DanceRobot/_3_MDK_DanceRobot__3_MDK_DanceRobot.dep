@@ -1,1051 +1,1085 @@
 Dependencies for Project '_3_MDK_DanceRobot', Target '_3_MDK_DanceRobot': (DO NOT MODIFY !)
-F (startup_stm32f411xe.s)(0x6A215052)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 526" --pd "_RTE_ SETA 1" --pd "STM32F411xE SETA 1"--list startup_stm32f411xe.lst --xref -o _3_mdk_dancerobot\startup_stm32f411xe.o --depend _3_mdk_dancerobot\startup_stm32f411xe.d)
-F (../Core/Src/main.c)(0x6A22F6EA)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\main.o --omf_browse _3_mdk_dancerobot\main.crf --depend _3_mdk_dancerobot\main.d)
-I (../Core/Inc/main.h)(0x6A22D8D6)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+F (startup_stm32f411xe.s)(0x6A24EF57)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 526" --pd "_RTE_ SETA 1" --pd "STM32F411xE SETA 1"--list startup_stm32f411xe.lst --xref -o _3_mdk_dancerobot\startup_stm32f411xe.o --depend _3_mdk_dancerobot\startup_stm32f411xe.d)
+F (../Core/Src/main.c)(0x6A250F97)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\main.o --omf_browse _3_mdk_dancerobot\main.crf --depend _3_mdk_dancerobot\main.d)
+I (../Core/Inc/main.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-I (../J-Link_RTT/SEGGER_RTT.h)(0x64CBAAFD)
-I (../J-Link_RTT/SEGGER_RTT_Conf.h)(0x6A17AC82)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+I (../J-Link_RTT/SEGGER_RTT.h)(0x6A24EF57)
+I (../J-Link_RTT/SEGGER_RTT_Conf.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (../DMP_MPU6050/mpu6050_dmp.h)(0x6A1809E3)
-I (..\LX-16A\LX-16A.h)(0x6A22E854)
-I (../Single_action/Single_action.h)(0x6A22D809)
-I (../Task/Task.h)(0x6A22F6E0)
-I (../Circular_dance/Circular_dance.h)(0x6A2157C0)
-F (../Core/Src/stm32f4xx_it.c)(0x6A215050)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_it.o --omf_browse _3_mdk_dancerobot\stm32f4xx_it.crf --depend _3_mdk_dancerobot\stm32f4xx_it.d)
-I (../Core/Inc/main.h)(0x6A22D8D6)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../DMP_MPU6050/mpu6050_dmp.h)(0x6A250148)
+I (..\LX-16A\LX-16A.h)(0x6A24EF57)
+I (../Single_action/Single_action.h)(0x6A24EF57)
+I (../Task/Task.h)(0x6A24EF57)
+I (../Circular_dance/Circular_dance.h)(0x6A24EF55)
+F (../Core/Src/stm32f4xx_it.c)(0x6A24EF55)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_it.o --omf_browse _3_mdk_dancerobot\stm32f4xx_it.crf --depend _3_mdk_dancerobot\stm32f4xx_it.d)
+I (../Core/Inc/main.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_it.h)(0x6A215050)
-F (../Core/Src/stm32f4xx_hal_msp.c)(0x6A1AFAD2)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_msp.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_msp.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x6A22D8D6)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_it.h)(0x6A24EF55)
+F (../Core/Src/stm32f4xx_hal_msp.c)(0x6A24EF55)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_msp.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_msp.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_msp.d)
+I (../Core/Inc/main.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_i2c.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_i2c.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_i2c.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_i2c.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_i2c.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_i2c.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_i2c_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_i2c_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_i2c_ex.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_i2c_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_i2c_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_i2c_ex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_rcc.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_rcc.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_rcc.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_rcc.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_rcc.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_rcc.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_rcc_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_rcc_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_rcc_ex.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_rcc_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_rcc_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_rcc_ex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_flash.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_flash.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_flash.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_flash.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_flash.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_flash.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_flash_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_flash_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_flash_ex.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_flash_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_flash_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_flash_ex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_flash_ramfunc.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_flash_ramfunc.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_flash_ramfunc.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_flash_ramfunc.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_flash_ramfunc.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_flash_ramfunc.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_gpio.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_gpio.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_gpio.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_gpio.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_gpio.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_gpio.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_dma_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_dma_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_dma_ex.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_dma_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_dma_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_dma_ex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_dma.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_dma.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_dma.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_dma.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_dma.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_dma.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_pwr.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_pwr.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_pwr.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_pwr.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_pwr.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_pwr.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_pwr_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_pwr_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_pwr_ex.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_pwr_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_pwr_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_pwr_ex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_cortex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_cortex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_cortex.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_cortex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_cortex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_cortex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal.crf --depend _3_mdk_dancerobot\stm32f4xx_hal.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal.crf --depend _3_mdk_dancerobot\stm32f4xx_hal.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_exti.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_exti.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_exti.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_exti.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_exti.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_exti.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_iwdg.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_iwdg.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_iwdg.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_iwdg.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_iwdg.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_iwdg.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_tim.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_tim.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_tim.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_tim.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_tim.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_tim.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_tim_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_tim_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_tim_ex.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_tim_ex.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_tim_ex.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_tim_ex.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c)(0x69A83001)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_uart.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_uart.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_uart.d)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\stm32f4xx_hal_uart.o --omf_browse _3_mdk_dancerobot\stm32f4xx_hal_uart.crf --depend _3_mdk_dancerobot\stm32f4xx_hal_uart.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../Core/Src/system_stm32f4xx.c)(0x69A83002)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\system_stm32f4xx.o --omf_browse _3_mdk_dancerobot\system_stm32f4xx.crf --depend _3_mdk_dancerobot\system_stm32f4xx.d)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../Core/Src/system_stm32f4xx.c)(0x6A24EF55)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\system_stm32f4xx.o --omf_browse _3_mdk_dancerobot\system_stm32f4xx.crf --depend _3_mdk_dancerobot\system_stm32f4xx.d)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (..\J-Link_RTT\SEGGER_RTT.c)(0x64CBAAFD)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\segger_rtt.o --omf_browse _3_mdk_dancerobot\segger_rtt.crf --depend _3_mdk_dancerobot\segger_rtt.d)
-I (..\J-Link_RTT\SEGGER_RTT.h)(0x64CBAAFD)
-I (..\J-Link_RTT\SEGGER_RTT_Conf.h)(0x6A17AC82)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (..\J-Link_RTT\SEGGER_RTT.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\segger_rtt.o --omf_browse _3_mdk_dancerobot\segger_rtt.crf --depend _3_mdk_dancerobot\segger_rtt.d)
+I (..\J-Link_RTT\SEGGER_RTT.h)(0x6A24EF57)
+I (..\J-Link_RTT\SEGGER_RTT_Conf.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\string.h)(0x599EDB3C)
-F (..\J-Link_RTT\SEGGER_RTT.h)(0x64CBAAFD)()
-F (..\J-Link_RTT\SEGGER_RTT_Conf.h)(0x6A17AC82)()
-F (..\J-Link_RTT\SEGGER_RTT_printf.c)(0x64CBAAFD)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\segger_rtt_printf.o --omf_browse _3_mdk_dancerobot\segger_rtt_printf.crf --depend _3_mdk_dancerobot\segger_rtt_printf.d)
-I (..\J-Link_RTT\SEGGER_RTT.h)(0x64CBAAFD)
-I (..\J-Link_RTT\SEGGER_RTT_Conf.h)(0x6A17AC82)
+F (..\J-Link_RTT\SEGGER_RTT.h)(0x6A24EF57)()
+F (..\J-Link_RTT\SEGGER_RTT_Conf.h)(0x6A24EF57)()
+F (..\J-Link_RTT\SEGGER_RTT_printf.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\segger_rtt_printf.o --omf_browse _3_mdk_dancerobot\segger_rtt_printf.crf --depend _3_mdk_dancerobot\segger_rtt_printf.d)
+I (..\J-Link_RTT\SEGGER_RTT.h)(0x6A24EF57)
+I (..\J-Link_RTT\SEGGER_RTT_Conf.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
 I (D:\MDK526\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
-F (../DMP_MPU6050/inv_mpu.c)(0x6A180948)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\inv_mpu.o --omf_browse _3_mdk_dancerobot\inv_mpu.crf --depend _3_mdk_dancerobot\inv_mpu.d)
+F (../DMP_MPU6050/inv_mpu.c)(0x6A24EF55)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\inv_mpu.o --omf_browse _3_mdk_dancerobot\inv_mpu.crf --depend _3_mdk_dancerobot\inv_mpu.d)
 I (D:\MDK526\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
 I (D:\MDK526\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
 I (D:\MDK526\ARM\ARMCC\include\string.h)(0x599EDB3C)
 I (D:\MDK526\ARM\ARMCC\include\math.h)(0x599EDB3E)
-I (../DMP_MPU6050/inv_mpu.h)(0x6A180951)
-I (../DMP_MPU6050/stm32_mpu6050.h)(0x6A18098D)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../DMP_MPU6050/inv_mpu.h)(0x6A24EF55)
+I (../DMP_MPU6050/stm32_mpu6050.h)(0x6A2510BD)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../DMP_MPU6050/inv_mpu_dmp_motion_driver.c)(0x6A180946)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\inv_mpu_dmp_motion_driver.o --omf_browse _3_mdk_dancerobot\inv_mpu_dmp_motion_driver.crf --depend _3_mdk_dancerobot\inv_mpu_dmp_motion_driver.d)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../DMP_MPU6050/inv_mpu_dmp_motion_driver.c)(0x6A24EF55)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\inv_mpu_dmp_motion_driver.o --omf_browse _3_mdk_dancerobot\inv_mpu_dmp_motion_driver.crf --depend _3_mdk_dancerobot\inv_mpu_dmp_motion_driver.d)
 I (D:\MDK526\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
 I (D:\MDK526\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
 I (D:\MDK526\ARM\ARMCC\include\string.h)(0x599EDB3C)
 I (D:\MDK526\ARM\ARMCC\include\math.h)(0x599EDB3E)
-I (../DMP_MPU6050/inv_mpu.h)(0x6A180951)
-I (../DMP_MPU6050/inv_mpu_dmp_motion_driver.h)(0x6A180952)
-I (../DMP_MPU6050/dmpKey.h)(0x6A180950)
-I (../DMP_MPU6050/dmpmap.h)(0x6A180952)
-I (../DMP_MPU6050/stm32_mpu6050.h)(0x6A18098D)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../DMP_MPU6050/inv_mpu.h)(0x6A24EF55)
+I (../DMP_MPU6050/inv_mpu_dmp_motion_driver.h)(0x6A24EF55)
+I (../DMP_MPU6050/dmpKey.h)(0x6A24EF55)
+I (../DMP_MPU6050/dmpmap.h)(0x6A24EF55)
+I (../DMP_MPU6050/stm32_mpu6050.h)(0x6A2510BD)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-F (../DMP_MPU6050/mpu6050_dmp.c)(0x6A215323)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\mpu6050_dmp.o --omf_browse _3_mdk_dancerobot\mpu6050_dmp.crf --depend _3_mdk_dancerobot\mpu6050_dmp.d)
-I (../DMP_MPU6050/mpu6050_dmp.h)(0x6A1809E3)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+F (../DMP_MPU6050/mpu6050_dmp.c)(0x6A25112C)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\mpu6050_dmp.o --omf_browse _3_mdk_dancerobot\mpu6050_dmp.crf --depend _3_mdk_dancerobot\mpu6050_dmp.d)
+I (../DMP_MPU6050/mpu6050_dmp.h)(0x6A250148)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../DMP_MPU6050/inv_mpu.h)(0x6A180951)
-I (../DMP_MPU6050/inv_mpu_dmp_motion_driver.h)(0x6A180952)
+I (../DMP_MPU6050/stm32_mpu6050.h)(0x6A2510BD)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
+I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+I (D:\MDK526\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
 I (D:\MDK526\ARM\ARMCC\include\math.h)(0x599EDB3E)
-F (..\Single_action\Single_action.c)(0x6A22D84E)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\single_action.o --omf_browse _3_mdk_dancerobot\single_action.crf --depend _3_mdk_dancerobot\single_action.d)
-I (..\Single_action\Single_action.h)(0x6A22D809)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../DMP_MPU6050/inv_mpu.h)(0x6A24EF55)
+I (../DMP_MPU6050/inv_mpu_dmp_motion_driver.h)(0x6A24EF55)
+F (..\Single_action\Single_action.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\single_action.o --omf_browse _3_mdk_dancerobot\single_action.crf --depend _3_mdk_dancerobot\single_action.d)
+I (..\Single_action\Single_action.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-I (../Core/Inc/main.h)(0x6A22D8D6)
-I (..\LX-16A\LX-16A.h)(0x6A22E854)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+I (../Core/Inc/main.h)(0x6A24EF55)
+I (..\LX-16A\LX-16A.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\string.h)(0x599EDB3C)
-F (..\Single_action\Single_action.h)(0x6A22D809)()
-F (..\Task\Task.c)(0x6A22F6D2)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\task.o --omf_browse _3_mdk_dancerobot\task.crf --depend _3_mdk_dancerobot\task.d)
-I (../Core/Inc/main.h)(0x6A22D8D6)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+F (..\Single_action\Single_action.h)(0x6A24EF57)()
+F (..\Task\Task.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\task.o --omf_browse _3_mdk_dancerobot\task.crf --depend _3_mdk_dancerobot\task.d)
+I (../Core/Inc/main.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-I (..\Task\Task.h)(0x6A22F6E0)
-I (..\LX-16A\LX-16A.h)(0x6A22E854)
-I (../Single_action/Single_action.h)(0x6A22D809)
-F (..\Task\Task.h)(0x6A22F6E0)()
-F (..\Circular_dance\Circular_dance.c)(0x6A1A6B5A)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\circular_dance.o --omf_browse _3_mdk_dancerobot\circular_dance.crf --depend _3_mdk_dancerobot\circular_dance.d)
-I (..\Circular_dance\Circular_dance.h)(0x6A2157C0)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+I (..\Task\Task.h)(0x6A24EF57)
+I (..\LX-16A\LX-16A.h)(0x6A24EF57)
+I (../Single_action/Single_action.h)(0x6A24EF57)
+F (..\Task\Task.h)(0x6A24EF57)()
+F (..\Circular_dance\Circular_dance.c)(0x6A24EF55)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\circular_dance.o --omf_browse _3_mdk_dancerobot\circular_dance.crf --depend _3_mdk_dancerobot\circular_dance.d)
+I (..\Circular_dance\Circular_dance.h)(0x6A24EF55)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-I (../Core/Inc/main.h)(0x6A22D8D6)
-I (..\LX-16A\LX-16A.h)(0x6A22E854)
-I (../Single_action/Single_action.h)(0x6A22D809)
-F (..\Circular_dance\Circular_dance.h)(0x6A2157C0)()
-F (..\LX-16A\LX-16A.c)(0x6A22EFC8)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\lx-16a.o --omf_browse _3_mdk_dancerobot\lx-16a.crf --depend _3_mdk_dancerobot\lx-16a.d)
-I (..\LX-16A\LX-16A.h)(0x6A22E854)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x69A83002)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+I (../Core/Inc/main.h)(0x6A24EF55)
+I (..\LX-16A\LX-16A.h)(0x6A24EF57)
+I (../Single_action/Single_action.h)(0x6A24EF57)
+F (..\Circular_dance\Circular_dance.h)(0x6A24EF55)()
+F (..\LX-16A\LX-16A.c)(0x6A24EF57)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../DMP_MPU6050 -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../J-Link_RTT -I ../Single_action -I ../Task -I ../Circular_dance -I ..\LX-16A-I.\RTE\__3_MDK_DanceRobot-ID:\MDK526\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-ID:\MDK526\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F411xE -DUSE_HAL_DRIVER -DSTM32F411xE -DMPU6050 -DEMPL-o _3_mdk_dancerobot\lx-16a.o --omf_browse _3_mdk_dancerobot\lx-16a.crf --depend _3_mdk_dancerobot\lx-16a.d)
+I (..\LX-16A\LX-16A.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h)(0x6A24EF56)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69A83002)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x69A83002)
-I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x69A83002)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69A83001)
-I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A1995F5)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69A83001)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6A24EF57)
+I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h)(0x6A24EF56)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x6A24EF57)
+I (../Core/Inc/stm32f4xx_hal_conf.h)(0x6A24EF55)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6A24EF57)
 I (D:\MDK526\ARM\ARMCC\include\stddef.h)(0x599EDB3C)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69A83001)
-I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69A83001)
-I (../Core/Inc/main.h)(0x6A22D8D6)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x6A24EF57)
+I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x6A24EF57)
+I (../Core/Inc/main.h)(0x6A24EF55)
 I (D:\MDK526\ARM\ARMCC\include\string.h)(0x599EDB3C)
-F (..\LX-16A\LX-16A.h)(0x6A22E854)()
+F (..\LX-16A\LX-16A.h)(0x6A24EF57)()

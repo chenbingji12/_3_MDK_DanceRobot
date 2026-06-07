@@ -74,7 +74,7 @@ DMA_HandleTypeDef hdma_usart6_tx;
 
 /* USER CODE BEGIN PV */
 
-volatile Mode g_mode = SINGLE_ACTION;    //动作模式枚举变量，初始为单个动作
+volatile Mode g_mode = DEBUG;    //动作模式枚举变量，初始为调试模式
 
 volatile Flag flag = {0};    //动作执行状态标志变量，初始为未执行状态
 
@@ -158,18 +158,33 @@ int main(void)
 HAL_UARTEx_ReceiveToIdle_DMA(&huart1,(uint8_t*) uart1_rx_buf, sizeof(uart1_rx_buf));   //开启 USART1 的 DMA 接收，接收数据存入 uart1_rx_buf
 HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_buf));   //开启 USART6 的 DMA 接收，接收数据存入 uart6_rx_buf
 
-/*陀螺仪初始化*/
-  SEGGER_RTT_printf(0, "DMP Init...\n");
-  if (MPU6050_DMP_Init() == 0)
-      {SEGGER_RTT_printf(0, "DMP Init OK\n");
-        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);  // DMP 初始化成功，点亮 LED
-        HAL_IWDG_Refresh(&hiwdg);   // 喂独立看门狗，防止复位,2048ms
+/* 陀螺仪初始化 — 带总线恢复 + 最多 3 次重试 */
+  int dmp_ok = 0;
+  for (int retry = 1; retry <= 3; retry++)
+  {
+      if (retry > 1) {
+          (g_mode==DEBUG) && SEGGER_RTT_printf(0, "DMP retry %d/3 - bus recovery...\n", retry);
+          MPU6050_I2C_BusRecovery();
+          MX_I2C1_Init();
+          HAL_Delay(200);
       }
-  else
-      {SEGGER_RTT_printf(0, "DMP Init FAILED\n");
-        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
-        while(1) ;    // DMP 初始化失败，熄灭 LED 并停在这里，饿死独立看门狗，复位
+      (g_mode==DEBUG) && SEGGER_RTT_printf(0, "DMP Init attempt %d/3...\n", retry);
+      if (MPU6050_DMP_Init() == 0) {
+          dmp_ok = 1;
+          break;
       }
+  }
+  if (dmp_ok) {
+      (g_mode==DEBUG) && SEGGER_RTT_printf(0, "DMP Init OK\n");
+      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);  // 点亮 LED
+      HAL_IWDG_Refresh(&hiwdg);   // 喂独立看门狗
+
+      HAL_IWDG_Refresh(&hiwdg);
+  } else {
+      (g_mode==DEBUG) && SEGGER_RTT_printf(0, "DMP Init FAILED after 3 attempts\n");
+      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);    // 熄灭 LED
+      while(1) ;    // 3 次都失败，饿死看门狗复位
+  }
 
   /* USER CODE END 2 */
 
@@ -184,7 +199,7 @@ HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_bu
     if(flag.DMA_Send == 1)
     {
       Single_Action((char*)uart6_rx_buf);   //调用动作函数
-      SEGGER_RTT_printf(0,"11111111111111111111111");
+      (g_mode==DEBUG) && SEGGER_RTT_printf(0,"11111111111111111111111");
       flag.DMA_Send = 0;
     }
 
@@ -199,16 +214,16 @@ HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_bu
         int r_frac = (int)((roll > 0 ? roll : -roll) * 100.0f) % 100;
         int y_int = (int)yaw;
         int y_frac = (int)((yaw > 0 ? yaw : -yaw) * 100.0f) % 100;
-        SEGGER_RTT_printf(0, "[%lu] P:%d.%02d R:%d.%02d Y:%d.%02d\n",
+        (g_mode==DEBUG) && SEGGER_RTT_printf(0, "[%lu] P:%d.%02d R:%d.%02d Y:%d.%02d\n",
                           HAL_GetTick(), p_int, p_frac, r_int, r_frac, y_int, y_frac);
         flag.mpu6050_data_ready=0;
     }
     }
-    /*for(int i=0;i<1000;i++)
+    /*for(int i=0;i<500;i++)
     {
 Servo_Write(1,i,0);
 HAL_Delay(1);
-SEGGER_RTT_printf(0,"============================%d",i);
+(g_mode==DEBUG) && SEGGER_RTT_printf(0,"============================%d",i);
     }*/
 // 获取当前系统运行的毫秒级时间戳
       uint32_t current_time = HAL_GetTick(); 
@@ -227,7 +242,7 @@ SEGGER_RTT_printf(0,"============================%d",i);
               }
           }
       }
-SEGGER_RTT_printf(0,"qqqqqqqqqqqqqqqqqqqqqqqqqqqq%d\n",HAL_GetTick());
+(g_mode==DEBUG) && SEGGER_RTT_printf(0,"qqqqqqqqqqqqqqqqqqqqqqqqqqqq%d\n",HAL_GetTick());
     HAL_IWDG_Refresh(&hiwdg);   // 喂独立看门狗，防止复位,2048ms
 		
   }
@@ -638,9 +653,10 @@ static void MX_GPIO_Init(void)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    if (GPIO_Pin == GPIO_PIN_15)    //如果接收到数据，置标志位（DMP中断），20ms中断一次
+    if (GPIO_Pin == GPIO_PIN_15)    //如果接收到数据，置标志位（DMP中断），10ms中断一次
     {
         flag.mpu6050_data_ready = 1;
+        (g_mode==DEBUG) && SEGGER_RTT_printf(0, "kkkkkkkkkkkkkkkkkkkh\nh\nh\nh\nh\n");
     }
 }
 
@@ -684,6 +700,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
                     break;
                 case KEY_DOWN:
                 HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);  // 闪烁 LED
+                key_state = KEY_STAY;
                     break;
                 case KEY_STAY:
                     break;
@@ -710,7 +727,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
     if (htim->Instance == TIM5)     //10ms 中断一次，实现较短时间的非阻滞延时
     {
-        SEGGER_RTT_printf(0,"ww\n");
+        (g_mode==DEBUG) && SEGGER_RTT_printf(0,"ww\n");
     }
   }
 

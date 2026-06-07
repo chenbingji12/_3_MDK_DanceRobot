@@ -72,25 +72,12 @@ uint8_t fifo_packet[10]={0};        //fifo缓冲区
 
 static uint8_t Fifo_Is_Full(fifo_t *fifo)
 {
-    if(((fifo->head+1)%TX_FIFO_SIZE) == ((fifo->tail)%TX_FIFO_SIZE))
-    {
-        return 1;
-    }
-    else {
-    return 0;
-    }
+    return (((fifo->head+1)%TX_FIFO_SIZE) == ((fifo->tail)%TX_FIFO_SIZE)) ? 1 : 0;
 }
 
 static uint8_t Fifo_Is_Empty(fifo_t *fifo)
 {
-    if((fifo->head % TX_FIFO_SIZE) == (fifo->tail % TX_FIFO_SIZE))
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
+    return ((fifo->head % TX_FIFO_SIZE) == (fifo->tail % TX_FIFO_SIZE)) ? 1 : 0;
 }
 
 uint8_t Fifo_Write(fifo_t *fifo, uint8_t fifo_packet[10])

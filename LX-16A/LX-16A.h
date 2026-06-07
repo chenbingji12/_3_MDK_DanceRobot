@@ -3,12 +3,12 @@
 
 #include "stm32f4xx.h"                  // Device header
 
-#define TX_FIFO_SIZE (20)
+#define TX_FIFO_SIZE (19)       //定义FIFO环形缓冲区大小
 
 typedef struct{
-    uint8_t buf[TX_FIFO_SIZE][10];
-    volatile uint8_t head;
-    volatile uint8_t tail;
+    uint8_t buf[TX_FIFO_SIZE][10];      //数组环形缓冲区
+    volatile uint8_t head;      //写指针
+    volatile uint8_t tail;      //读指针
 }fifo_t;
 
 extern fifo_t fifo;

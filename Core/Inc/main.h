@@ -38,7 +38,8 @@ extern "C" {
 /* USER CODE BEGIN ET */
 
 typedef enum {
-  SINGLE_ACTION = 0,
+  DEBUG=0,
+  SINGLE_ACTION,
   CIRCULAR_DANCE
 } Mode;
 extern volatile Mode g_mode;    //动作模式枚举变量
