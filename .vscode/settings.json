@@ -1,3 +1,6 @@
 {
-    "cmake.sourceDirectory": "D:/Desktop/CUBEMX_DE_WENJIAN/_3_MDK_DanceRobot/Drivers/CMSIS/NN"
+    "cmake.sourceDirectory": "D:/Desktop/CUBEMX_DE_WENJIAN/_3_MDK_DanceRobot/Drivers/CMSIS/NN",
+    "trae.tab.enableRename": false,
+    "trae.tab.enableAutoImport": true,
+    "trae.tab.cue": true
 }

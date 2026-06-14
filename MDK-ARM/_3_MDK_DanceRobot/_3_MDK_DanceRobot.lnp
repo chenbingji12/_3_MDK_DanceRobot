@@ -1,6 +1,12 @@
 --cpu=Cortex-M4.fp
 "_3_mdk_dancerobot\startup_stm32f411xe.o"
 "_3_mdk_dancerobot\main.o"
+"_3_mdk_dancerobot\gpio.o"
+"_3_mdk_dancerobot\dma.o"
+"_3_mdk_dancerobot\i2c.o"
+"_3_mdk_dancerobot\iwdg.o"
+"_3_mdk_dancerobot\tim.o"
+"_3_mdk_dancerobot\usart.o"
 "_3_mdk_dancerobot\stm32f4xx_it.o"
 "_3_mdk_dancerobot\stm32f4xx_hal_msp.o"
 "_3_mdk_dancerobot\stm32f4xx_hal_i2c.o"
