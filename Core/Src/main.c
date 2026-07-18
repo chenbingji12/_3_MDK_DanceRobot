@@ -36,6 +36,7 @@
 #include "Single_action.h"
 #include "Task.h"
 #include "Circular_dance.h"
+#include "IMU.h"
 
 /* USER CODE END Includes */
 
@@ -76,6 +77,8 @@ volatile float pitch = 0.0f, roll = 0.0f, yaw = 0.0f;    //欧拉角，单位度
 volatile uint8_t uart1_rx_buf[UART1_RX_SIZE];   // USART1 接收缓冲区，64 字节
 volatile uint8_t uart6_rx_buf[UART6_RX_SIZE];   // USART6 接收缓冲区，30 字节
 
+uint8_t pos_read_id=1;    //位置读取 ID，初始为 1，范围 1-19
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -106,6 +109,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+	__HAL_RCC_GPIOC_CLK_ENABLE();
 	
   /* USER CODE END Init */
 
@@ -127,6 +131,7 @@ int main(void)
   MX_USART6_UART_Init();
   MX_TIM4_Init();
   MX_TIM5_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_Base_Start_IT(&htim10);     //启动 TIM10
@@ -139,10 +144,13 @@ int main(void)
 HAL_UARTEx_ReceiveToIdle_DMA(&huart1,(uint8_t*) uart1_rx_buf, sizeof(uart1_rx_buf));   //开启 USART1 的 DMA 接收，接收数据存入 uart1_rx_buf
 HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_buf));   //开启 USART6 的 DMA 接收，接收数据存入 uart6_rx_buf
 
+IMU_Init(&huart2);    //启动IMU模块DMA接收
+
 /* 陀螺仪初始化 — 带总线恢复 + 最多 3 次重试 */
   int dmp_ok = 0;
   for (int retry = 1; retry <= 3; retry++)
   {
+		HAL_IWDG_Refresh(&hiwdg);
       if (retry > 1) {
           (g_mode==DEBUG) && SEGGER_RTT_printf(0, "DMP retry %d/3 - bus recovery...\n", retry);
           MPU6050_I2C_BusRecovery();    //I2C总线恢复
@@ -164,8 +172,10 @@ HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_bu
   } else {
       (g_mode==DEBUG) && SEGGER_RTT_printf(0, "DMP Init FAILED after 3 attempts\n");
       HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);    // 熄灭 LED
-      while(1) ;    // 3 次都失败，饿死看门狗复位
+      while(1){HAL_GPIO_TogglePin (GPIOC ,GPIO_PIN_13 );HAL_Delay (100);} ;    // 3 次都失败，饿死看门狗复位
   }
+
+  printf("Hello World!\n");
 
   /* USER CODE END 2 */
 
@@ -177,11 +187,27 @@ HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_bu
 
     /* USER CODE BEGIN 3 */
 
-    if(flag.DMA_Send == 1)
+    if(flag.uart6_rx_ready == 1)//来自上位机的指令
     {
       Single_Action((char*)uart6_rx_buf);   //调用动作函数
       (g_mode==DEBUG) && SEGGER_RTT_printf(0,"[DMA] USART6 received, executing action: %s\n", uart6_rx_buf);
-      flag.DMA_Send = 0;    //动作执行完成后，将标志位设为未执行状态
+      (g_mode==DEBUG) && printf("uart6_rx_buf: %s\n", uart6_rx_buf);
+      memset((char*)uart6_rx_buf, 0, UART6_RX_SIZE);   //清空传入的动作名称字符串，避免重复执行同一动作
+      flag.uart6_rx_ready = 0;    //动作执行完成后，将标志位设为未执行状态
+      HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_buf));  //重新开启DMA接收
+    }
+
+    if(flag.uart1_rx_ready == 1)//来自舵机的指令
+    {
+      printf("%s",uart1_rx_buf);
+      (g_mode==DEBUG) && SEGGER_RTT_printf(0,"[DMA] USART1 received, executing action: %s\n", uart1_rx_buf);
+      (g_mode==DEBUG) && printf("uart1_rx_buf: %s\n", uart1_rx_buf);
+      memset((char*)uart1_rx_buf, 0, UART1_RX_SIZE);   //清空传入的动作名称字符串，避免重复执行同一动作
+      pos_read_id++;
+      if(pos_read_id>19) {pos_read_id=1;}    //位置读取 ID，范围 1-19
+      else {Servo_ReadPos(pos_read_id);}
+      flag.uart1_rx_ready = 0;    //动作执行完成后，将标志位设为未执行状态
+      HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t*)uart1_rx_buf, sizeof(uart1_rx_buf));  //重新开启DMA接收
     }
 
     if(flag.mpu6050_data_ready==1)
@@ -200,30 +226,28 @@ HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_bu
         flag.mpu6050_data_ready=0;    //数据处理完成后，将标志位设为未接收状态
     }
     }
-    /*for(int i=0;i<500;i++)
-    {
-Servo_Write(1,i,0);
-HAL_Delay(1);
-(g_mode==DEBUG) && SEGGER_RTT_printf(0,"============================%d",i);
-    }*/
-// 获取当前系统运行的毫秒级时间戳
-      uint32_t current_time = HAL_GetTick(); 
 
-      // 遍历任务表
-      for (int i = 0; i < task_count; i++) 
-      {
-          // 如果任务是激活状态
-          if (task_table[i].is_active) 
-          {
-              // 计算时间差：当前时间 - 上次执行时间 >= 任务周期
-              if (current_time - task_table[i].last_run_time >= task_table[i].interval_ms) 
-              {
-                  task_table[i].task_func();                   // 1. 执行任务
-                  task_table[i].last_run_time = HAL_GetTick();  // 2. 更新最后执行时间
-              }
-          }
-      }
-(g_mode==DEBUG) && SEGGER_RTT_printf(0,"Tick:%d\n",HAL_GetTick());
+    /* IMU数据处理 */
+    {
+        IMU_Data_t *imu = IMU_GetData();
+        if (imu->updated) {
+            int r_int = (int)imu->roll;
+            int r_frac = (int)((imu->roll > 0 ? imu->roll : -imu->roll) * 100.0f) % 100;
+            int p_int = (int)imu->pitch;
+            int p_frac = (int)((imu->pitch > 0 ? imu->pitch : -imu->pitch) * 100.0f) % 100;
+            int y_int = (int)imu->yaw;
+            int y_frac = (int)((imu->yaw > 0 ? imu->yaw : -imu->yaw) * 100.0f) % 100;
+            (g_mode==DEBUG) && SEGGER_RTT_printf(0, "[IMU] R:%d.%02d P:%d.%02d Y:%d.%02d\n",
+                              r_int, r_frac, p_int, p_frac, y_int, y_frac);
+            imu->updated = 0;
+        }
+    }
+
+    Task_Process();    //任务处理函数
+		
+		tick = HAL_GetTick();
+
+//(g_mode==DEBUG) && SEGGER_RTT_printf(0,"Tick:%d\n",HAL_GetTick());
     HAL_IWDG_Refresh(&hiwdg);   // 喂独立看门狗，防止复位,2048ms
 		
   }
@@ -291,14 +315,22 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart,uint16_t Size)
 {
     if (huart->Instance == USART1)
     {
-        
+        flag.uart1_rx_ready=1;    //DMA发送标志位为1，表示数据已接收完毕
     }
     if (huart->Instance == USART6)
     {
-        uart6_rx_buf[Size] = '\0';   //确保字符串以 null 结尾
-        flag.DMA_Send=1;    //DMA发送标志位为1，表示数据已接收完毕
-        HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_buf));  //重新开启DMA接收
+        flag.uart6_rx_ready=1;    //DMA发送标志位为1，表示数据已接收完毕
     }
+    if (huart->Instance == USART2)
+    {
+        IMU_RxEventCallback(Size);
+    }
+  }
+
+  int fputc(int c, FILE *f)
+  {
+    HAL_UART_Transmit(&huart6, (uint8_t *)&c, 1,0xFFFF);//将字符发送到上位机
+    return c;
   }
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
@@ -306,7 +338,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
     if (huart->Instance == USART1)
     {
         // DMA 发送完成，从 FIFO 取下一包继续发
-        if (Fifo_Read(&fifo, fifo_packet))
+        if (Fifo_Read(&fifo, fifo_packet)==1)
         {
             HAL_UART_Transmit_DMA(&huart1, fifo_packet, 10);
         }
@@ -314,49 +346,43 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
     }
 }
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-    if (htim->Instance == TIM10)    //20ms 中断一次，读取按键状态
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+  if (htim->Instance == TIM10) // 20ms 中断一次，读取按键状态
+  {
+    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET) // 按键按下
     {
-        if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)==GPIO_PIN_SET)   //按键按下
-        {
-            switch (key_state)
-            {
-                case KEY_UP:
-                    key_state = KEY_DOWN;
-                    break;
-                case KEY_DOWN:
-                HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);  // 闪烁 LED
-                key_state = KEY_STAY;
-                    break;
-                case KEY_STAY:
-                    break;
-                default:
-                    key_state = KEY_UP;
-                    break;
-            }
-    }
-        else    //按键松开
-        {
-            key_state = KEY_UP;
-        }
-  }
-
-    if (htim->Instance == TIM11)    //15ms 中断一次
+      switch (key_state) {
+      case KEY_UP:
+        key_state = KEY_DOWN;
+        break;
+      case KEY_DOWN:
+        HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13); // 闪烁 LED
+        key_state = KEY_STAY;
+        break;
+      case KEY_STAY:
+        break;
+      default:
+        key_state = KEY_UP;
+        break;
+      }
+    } else // 按键松开
     {
-        
-    }
-
-    if (htim->Instance == TIM4)     //100ms 中断一次，实现较长时间的非阻滞延时
-    {
-        
-    }
-
-    if (htim->Instance == TIM5)     //10ms 中断一次，实现较短时间的非阻滞延时
-    {
-        
+      key_state = KEY_UP;
     }
   }
+
+  if (htim->Instance == TIM11) // 15ms 中断一次
+  {
+  }
+
+  if (htim->Instance == TIM4) // 100ms 中断一次，实现较长时间的非阻滞延时
+  {
+  }
+
+  if (htim->Instance == TIM5) // 10ms 中断一次，实现较短时间的非阻滞延时
+  {
+  }
+}
 
 /* USER CODE END 4 */
 
@@ -387,6 +413,8 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+     SEGGER_RTT_printf(0, "\n[ASSERT FAILED] File: %s, Line: %d\n", file, line);
+     //打印断言失败的文件名和行号
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */

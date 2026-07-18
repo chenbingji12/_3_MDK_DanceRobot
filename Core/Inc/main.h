@@ -46,7 +46,8 @@ extern volatile Mode g_mode;    //动作模式枚举变量
 
 typedef struct {
     uint8_t mpu6050_data_ready;
-    uint8_t DMA_Send;
+    uint8_t uart1_rx_ready;
+    uint8_t uart6_rx_ready;
     uint8_t walk_forward;
     uint8_t walk_backward;
     uint8_t move_to_left;

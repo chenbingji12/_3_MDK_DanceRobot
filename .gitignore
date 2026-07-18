@@ -1,0 +1,43 @@
+# OpenCode / OMO 运行时缓存
+.omo/
+.sisyphus/
+.codegraph/
+
+# MDK-ARM (Keil) 构建产物
+*.o
+*.crf
+*.d
+*.dep
+*.axf
+*.hex
+*.htm
+*.build_log.htm
+*.map
+*.iex
+*.lnp
+*.lst
+*.plg
+*.Administrator
+*.uvguix.*
+
+# J-Link 调试文件
+JLinkLog.txt
+JLinkSettings.ini
+
+# Keil 构建日志
+build_log.txt
+
+# MDK 中间目录
+RTE/
+Listings/
+Objects/
+DebugConfig/
+
+# VSCode / IDE 日志
+**/.vscode/*.log
+**/.vscode/*.lock
+
+# 系统垃圾文件
+Thumbs.db
+Desktop.ini
+*.bak

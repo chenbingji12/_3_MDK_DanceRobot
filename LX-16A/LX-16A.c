@@ -32,11 +32,11 @@ packet[8] = (time >> 8) & 0xFF;  // 高8位
     }
     packet[9] = ~(sum & 0xFF);
 
-    if(Fifo_Write(&fifo,packet))
+    if(Fifo_Write(&fifo,packet)==1)
     {
         if(huart1.gState == HAL_UART_STATE_READY)
         {
-            if(Fifo_Read(&fifo,fifo_packet))
+            if(Fifo_Read(&fifo,fifo_packet)==1)
     HAL_UART_Transmit_DMA(&huart1, fifo_packet, 10);   // 通过 USART1 的 DMA 发送数据包
         }
     }
@@ -44,7 +44,7 @@ packet[8] = (time >> 8) & 0xFF;  // 高8位
 
 void Servo_Stop(uint8_t id)
 {
-while(huart1.gState != HAL_UART_STATE_READY);       //等待前一次发送完毕，再发送新的数据包
+//while(huart1.gState != HAL_UART_STATE_READY);       //等待前一次发送完毕，再发送新的数据包
 
 static uint8_t packet[6];
     
@@ -64,7 +64,32 @@ packet[4] = 0x0c;   // 指令序号
     }
     packet[5] = ~(sum & 0xFF);
 
-    HAL_UART_Transmit_DMA(&huart1, packet, sizeof(packet));   // 通过 USART1 的 DMA 发送数据包
+    if(Fifo_Write(&fifo,packet)==1)
+    {
+        if(huart1.gState == HAL_UART_STATE_READY)
+        {
+            if(Fifo_Read(&fifo,fifo_packet)==1)
+    HAL_UART_Transmit_DMA(&huart1, fifo_packet, 6);   // 通过 USART1 的 DMA 发送数据包
+        }
+    }
+}
+
+void Servo_ReadPos(uint8_t id)
+{
+    uint8_t packet[6];
+
+    packet[0]=0x55;
+    packet[1]=0x55;
+
+    packet[2]=id;
+
+    packet[3]=0x03;
+
+    packet[4]=0x1C;
+
+    packet[5]=~(id + 0x03 + 0x1C) & 0xFF;
+
+    HAL_UART_Transmit_DMA(&huart1, packet, 6);
 }
 
 fifo_t fifo = {0};               // 全局 FIFO

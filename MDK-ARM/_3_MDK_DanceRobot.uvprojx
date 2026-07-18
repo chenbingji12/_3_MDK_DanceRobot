@@ -309,7 +309,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>4</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -335,7 +335,7 @@
               <MiscControls />
               <Define>USE_HAL_DRIVER,STM32F411xE,MPU6050,EMPL</Define>
               <Undefine />
-              <IncludePath>../Core/Inc;../DMP_MPU6050;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../J-Link_RTT;../Single_action;../Task;../Circular_dance;../LX-16A</IncludePath>
+              <IncludePath>../Core/Inc;../DMP_MPU6050;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../J-Link_RTT;../Single_action;../Task;../Circular_dance;../LX-16A;../IMU</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -411,6 +411,7 @@
                   <AssembleAssemblyFile>2</AssembleAssemblyFile>
                   <PublicsOnly>2</PublicsOnly>
                   <StopOnExitCode>11</StopOnExitCode>
+                  <ComprImg>1</ComprImg>
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
@@ -428,7 +429,15 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                   </Cads>
                 </FileArmAds>
               </FileOption>
@@ -450,6 +459,7 @@
                   <AssembleAssemblyFile>2</AssembleAssemblyFile>
                   <PublicsOnly>2</PublicsOnly>
                   <StopOnExitCode>11</StopOnExitCode>
+                  <ComprImg>1</ComprImg>
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
@@ -467,7 +477,15 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                   </Cads>
                 </FileArmAds>
               </FileOption>
@@ -489,6 +507,7 @@
                   <AssembleAssemblyFile>2</AssembleAssemblyFile>
                   <PublicsOnly>2</PublicsOnly>
                   <StopOnExitCode>11</StopOnExitCode>
+                  <ComprImg>1</ComprImg>
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
@@ -506,7 +525,15 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                   </Cads>
                 </FileArmAds>
               </FileOption>
@@ -528,6 +555,7 @@
                   <AssembleAssemblyFile>2</AssembleAssemblyFile>
                   <PublicsOnly>2</PublicsOnly>
                   <StopOnExitCode>11</StopOnExitCode>
+                  <ComprImg>1</ComprImg>
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
@@ -545,7 +573,15 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                   </Cads>
                 </FileArmAds>
               </FileOption>
@@ -567,6 +603,7 @@
                   <AssembleAssemblyFile>2</AssembleAssemblyFile>
                   <PublicsOnly>2</PublicsOnly>
                   <StopOnExitCode>11</StopOnExitCode>
+                  <ComprImg>1</ComprImg>
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
@@ -584,7 +621,15 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                   </Cads>
                 </FileArmAds>
               </FileOption>
@@ -606,6 +651,7 @@
                   <AssembleAssemblyFile>2</AssembleAssemblyFile>
                   <PublicsOnly>2</PublicsOnly>
                   <StopOnExitCode>11</StopOnExitCode>
+                  <ComprImg>1</ComprImg>
                 </CommonProperty>
                 <FileArmAds>
                   <Cads>
@@ -623,7 +669,15 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
+                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
                   </Cads>
                 </FileArmAds>
               </FileOption>
@@ -1110,6 +1164,21 @@
               <FileName>LX-16A.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\LX-16A\LX-16A.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>IMU</GroupName>
+          <Files>
+            <File>
+              <FileName>IMU.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\IMU\IMU.c</FilePath>
+            </File>
+            <File>
+              <FileName>IMU.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\IMU\IMU.h</FilePath>
             </File>
           </Files>
         </Group>
