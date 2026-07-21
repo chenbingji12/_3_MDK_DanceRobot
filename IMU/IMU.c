@@ -48,7 +48,9 @@ static void IMU_ParseEulerFrame(uint8_t *frame);
 /* Exported functions --------------------------------------------------------*/
 
 /**
-  * @brief  初始化IMU模块
+  * @brief  初始化IMU模块, 启动USART2的DMA+空闲中断接收
+  * @param  huart: USART2句柄指针 (&huart2)
+  * @retval 无
   */
 void IMU_Init(UART_HandleTypeDef *huart)
 {
@@ -63,6 +65,8 @@ void IMU_Init(UART_HandleTypeDef *huart)
 
 /**
   * @brief  空闲中断回调 (在main.c的HAL_UARTEx_RxEventCallback中调用)
+  * @param  Size: 本次接收到的字节数
+  * @retval 无
   */
 void IMU_RxEventCallback(uint16_t Size)
 {
@@ -83,6 +87,7 @@ void IMU_Process(void)
 
 /**
   * @brief  获取IMU数据指针
+  * @retval IMU_Data_t指针
   */
 IMU_Data_t* IMU_GetData(void)
 {
@@ -93,6 +98,9 @@ IMU_Data_t* IMU_GetData(void)
 
 /**
   * @brief  计算校验和: 从buf[0]累加到buf[len-1], 取最低字节
+  * @param  buf: 待校验的缓冲区指针
+  * @param  len: 校验长度
+  * @retval 校验和
   */
 static uint8_t IMU_CalcChecksum(uint8_t *buf, uint16_t len)
 {
@@ -106,6 +114,8 @@ static uint8_t IMU_CalcChecksum(uint8_t *buf, uint16_t len)
 /**
   * @brief  解析欧拉角帧 (功能字0x26)
   *         数据为float32小端序, 单位弧度, 需转为角度
+  * @param  frame: 帧起始指针 (包含帧头和长度)
+  * @retval 无
   */
 static void IMU_ParseEulerFrame(uint8_t *frame)
 {
@@ -141,6 +151,9 @@ static void IMU_ParseEulerFrame(uint8_t *frame)
 /**
   * @brief  解析DMA缓冲区中的数据帧
   *         在缓冲区中查找完整帧, 支持一帧或多帧连续解析
+  * @param  buf: DMA缓冲区指针
+  * @param  len: 缓冲区长度
+  * @retval 无
   */
 static void IMU_ParseBuffer(uint8_t *buf, uint16_t len)
 {

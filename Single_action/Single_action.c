@@ -1,3 +1,8 @@
+/**
+  * @file    Single_action.c
+  * @brief   单一动作控制函数实现（命令表）
+  */
+
 #include "Single_action.h"
 #include "string.h"
 
@@ -99,6 +104,11 @@ static const uint16_t Squat_Data[][3]=
 
 /*****************串口调试指令*****************/
 /*[s %d %d],控制舵机角度,第一个参数为舵机编号,第二个参数为角度值*/
+/**
+  * @brief  控制舵机角度
+  * @param  param: 参数字符串
+  * @retval 无
+  */
 void Slider(char *param)
 {
     int slider_id,slider_angle;
@@ -114,6 +124,10 @@ void ReadAllPos(char *param)
 }
 
 /**************薄函数，供外部调用***************/
+/**
+  * @brief  复位所有舵机
+  * @retval 无
+  */
 void Reset_Whole(void)
 {
 Take_Action(Reset_Whole_Data,sizeof(Reset_Whole_Data)/sizeof(Reset_Whole_Data[0]));
@@ -153,6 +167,11 @@ Take_Action(Right_MoveAside_Data,sizeof(Right_MoveAside_Data)/sizeof(Right_MoveA
 
 extern uint8_t move_action_active;
 
+/**
+  * @brief  设置移动动作标志
+  * @param  name: 动作名称字符串
+  * @retval 无
+  */
 static void Set_Move_Flag(char name[UART6_RX_SIZE])     //根据传入的动作名称字符串，在动作表中查找对应的循环动作并设置相应的动作执行标志
 {
     if(strcmp(name,"walk_forward")==0)
@@ -176,6 +195,12 @@ static void Set_Move_Flag(char name[UART6_RX_SIZE])     //根据传入的动作�
 }
 
 /**********************执行动作函数*****************/
+/**
+  * @brief  执行动作
+  * @param  a: 动作参数数组
+  * @param  count: 动作数量
+  * @retval 无
+  */
 void Take_Action(const uint16_t a[][3], uint8_t count)        //根据传入的动作参数数组，依次调用舵机控制函数执行相应动作
 {
     for (int i = 0; i < count; i++)
@@ -230,6 +255,11 @@ static const Action action[] = {
 }; // 动作表，存放所有动作的名称和对应的函数指针
 
 /**************查找动作名称字符串在动作表中的位置***********/
+/**
+  * @brief  根据动作名称执行相应动作的命令表
+  * @param  name: 动作名称字符串
+  * @retval 无
+  */
 void Single_Action(char *name) // 根据传入的动作名称字符串，在动作表中查找对应的函数指针并执行相应动作
 {
   for (int i = 0; i < ACTION_COUNT; i++) {

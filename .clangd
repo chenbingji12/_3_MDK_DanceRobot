@@ -1,0 +1,28 @@
+CompileFlags:
+  Add:
+    # MCU型号宏定义 (来自Keil工程)
+    - -DUSE_HAL_DRIVER
+    - -DSTM32F411xE
+    - -DMPU6050
+    - -DEMPL
+    # 头文件路径 (来自Keil工程 IncludePath)
+    - -ICore/Inc
+    - -IDMP_MPU6050
+    - -IDrivers/STM32F4xx_HAL_Driver/Inc
+    - -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy
+    - -IDrivers/CMSIS/Device/ST/STM32F4xx/Include
+    - -IDrivers/CMSIS/Include
+    - -IJ-Link_RTT
+    - -ISingle_action
+    - -ITask
+    - -ICircular_dance
+    - -ILX-16A
+    - -IIMU
+    # C语言标准
+    - -std=gnu11
+
+Diagnostics:
+  Suppress:
+    # 抑制Keil编译器特性的误报(如__attribute__、__packed等)
+    - -Wunknown-attributes
+    - -Wunused-parameter

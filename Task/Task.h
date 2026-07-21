@@ -1,14 +1,24 @@
+/**
+  * @file    Task.h
+  * @brief   任务控制函数声明
+  */
+
 #ifndef __TASK_H
 #define __TASK_H
+
 #include "stm32f4xx.h"                  // Device header
 #include "main.h"
 #include "LX-16A.h"
 #include "Single_action.h"
 
-#define ACTION_NUM (sizeof(move_actions) / sizeof(move_actions[0]))     //定义计算出的动作个数
+/**
+  *@brief 计算动作个数
+  */
+#define ACTION_NUM (sizeof(move_actions) / sizeof(move_actions[0]))
 
-/*表驱动的时间触发合作式调度器*/
-// 1. 定义任务控制块 (TCB) 结构体
+/**
+  *@brief 表驱动的时间触发合作式调度器
+  */
 typedef struct {
     void (*task_func)(void); // 函数指针：指向具体要执行的任务函数
     uint32_t *interval_ms;    // 任务的期望执行周期 (单位：毫秒)
@@ -19,6 +29,9 @@ typedef struct {
 extern TaskDef task_table[];   // 任务表，存放所有任务的控制块
 extern const uint8_t task_count;
 
+/**
+  *@brief 移动动作控制块
+  */
 typedef struct {
    volatile uint8_t *move_flag;          //动作指令
     void (*task_func_1)(void);   //动作函数1指针
@@ -26,10 +39,23 @@ typedef struct {
     uint32_t wait_time_ms;    // 任务的等待时间 (单位：毫秒)
     uint8_t count;              // 任务执行次数
 } MoveAction;
-
 extern MoveAction move_actions[];   // 动作表，存放所有动作的控制块
 
+/**
+  *@brief 按键状态枚举
+  */
+typedef enum {
+    KEY_UP = 0,   //按键未按下状态
+    KEY_DOWN,   //按键按下状态
+    KEY_STAY    //按键保持状态
+} KeyState;
+extern KeyState key_state;    //按键状态变量（定义在 Task.c）
+
+/**
+  *@brief 任务处理函数
+  */
 void Move_Action(void);    //移动任务函数
+void Key_Event(void);    //按键事件处理函数
 
 void Task_Process(void);    //任务处理函数
 

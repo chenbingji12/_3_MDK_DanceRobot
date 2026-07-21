@@ -18,8 +18,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
 #include "dma.h"
-#include "i2c.h"
 #include "iwdg.h"
 #include "tim.h"
 #include "usart.h"
@@ -31,24 +31,17 @@
 #include "SEGGER_RTT.h"
 #include "SEGGER_RTT_Conf.h"
 #include "string.h"
-#include "mpu6050_dmp.h"
 #include "LX-16A.h"
 #include "Single_action.h"
 #include "Task.h"
 #include "Circular_dance.h"
 #include "IMU.h"
+#include "FIFO.h"
 
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
-typedef enum {
-    KEY_UP = 0,   //按键未按下状态
-    KEY_DOWN,   //按键按下状态
-    KEY_STAY    //按键保持状态
-} KeyState;
-KeyState key_state = KEY_UP;    //按键状态变量，初始为未按下状态
 
 /* USER CODE END PTD */
 
@@ -78,6 +71,10 @@ volatile uint8_t uart1_rx_buf[UART1_RX_SIZE];   // USART1 接收缓冲区，64 �
 volatile uint8_t uart6_rx_buf[UART6_RX_SIZE];   // USART6 接收缓冲区，30 字节
 
 uint8_t pos_read_id=1;    //位置读取 ID，初始为 1，范围 1-19
+
+volatile float voltage_sum = 0.0f;    //电池电压采样累加值
+volatile uint8_t voltage_count = 0;    //电池电压采样计
+volatile float battery_voltage = 0.0f;    //电池电压，单位伏特
 
 /* USER CODE END PV */
 
@@ -123,7 +120,6 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_I2C1_Init();
   MX_IWDG_Init();
   MX_USART1_UART_Init();
   MX_TIM10_Init();
@@ -132,6 +128,7 @@ int main(void)
   MX_TIM4_Init();
   MX_TIM5_Init();
   MX_USART2_UART_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_Base_Start_IT(&htim10);     //启动 TIM10
@@ -146,34 +143,7 @@ HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_bu
 
 IMU_Init(&huart2);    //启动IMU模块DMA接收
 
-/* 陀螺仪初始化 — 带总线恢复 + 最多 3 次重试 */
-  int dmp_ok = 0;
-  for (int retry = 1; retry <= 3; retry++)
-  {
-		HAL_IWDG_Refresh(&hiwdg);
-      if (retry > 1) {
-          (g_mode==DEBUG) && SEGGER_RTT_printf(0, "DMP retry %d/3 - bus recovery...\n", retry);
-          MPU6050_I2C_BusRecovery();    //I2C总线恢复
-          MX_I2C1_Init();   //重新初始化 I2C1
-          HAL_Delay(200);
-      }
-      (g_mode==DEBUG) && SEGGER_RTT_printf(0, "DMP Init attempt %d/3...\n", retry);
-      if (MPU6050_DMP_Init() == 0) {
-          dmp_ok = 1;
-          break;
-      }
-  }
-  if (dmp_ok) {
-      (g_mode==DEBUG) && SEGGER_RTT_printf(0, "DMP Init OK\n");
-      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);  // 点亮 LED
-      HAL_IWDG_Refresh(&hiwdg);   // 喂独立看门狗
-
-      HAL_IWDG_Refresh(&hiwdg);
-  } else {
-      (g_mode==DEBUG) && SEGGER_RTT_printf(0, "DMP Init FAILED after 3 attempts\n");
-      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);    // 熄灭 LED
-      while(1){HAL_GPIO_TogglePin (GPIOC ,GPIO_PIN_13 );HAL_Delay (100);} ;    // 3 次都失败，饿死看门狗复位
-  }
+HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
 
   printf("Hello World!\n");
 
@@ -187,11 +157,22 @@ IMU_Init(&huart2);    //启动IMU模块DMA接收
 
     /* USER CODE BEGIN 3 */
 
+    if(battery_voltage < 7.0f)   //电池电压低于7.0V，提示用户更换电池
+    {
+      (g_mode==DEBUG) && SEGGER_RTT_printf(0,"[Warning] Battery voltage is low: %.2fV, please replace the battery!\n", battery_voltage);
+//      (g_mode==DEBUG) && printf("[Warning] Battery voltage is low: %.2fV, please replace the battery!\n", battery_voltage);
+      HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_SET);   //蜂鸣器响
+    }
+    else if(battery_voltage >= 7.1f)   //电池电压恢复正常，蜂鸣器不响,迟滞区间0.1V，避免频繁响起
+    {
+      HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_RESET);   //蜂鸣器不响
+    }
+
     if(flag.uart6_rx_ready == 1)//来自上位机的指令
     {
       Single_Action((char*)uart6_rx_buf);   //调用动作函数
       (g_mode==DEBUG) && SEGGER_RTT_printf(0,"[DMA] USART6 received, executing action: %s\n", uart6_rx_buf);
-      (g_mode==DEBUG) && printf("uart6_rx_buf: %s\n", uart6_rx_buf);
+//      (g_mode==DEBUG) && printf("uart6_rx_buf: %s\n", uart6_rx_buf);
       memset((char*)uart6_rx_buf, 0, UART6_RX_SIZE);   //清空传入的动作名称字符串，避免重复执行同一动作
       flag.uart6_rx_ready = 0;    //动作执行完成后，将标志位设为未执行状态
       HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_buf));  //重新开启DMA接收
@@ -201,45 +182,38 @@ IMU_Init(&huart2);    //启动IMU模块DMA接收
     {
       printf("%s",uart1_rx_buf);
       (g_mode==DEBUG) && SEGGER_RTT_printf(0,"[DMA] USART1 received, executing action: %s\n", uart1_rx_buf);
-      (g_mode==DEBUG) && printf("uart1_rx_buf: %s\n", uart1_rx_buf);
+//      (g_mode==DEBUG) && printf("uart1_rx_buf: %s\n", uart1_rx_buf);
       memset((char*)uart1_rx_buf, 0, UART1_RX_SIZE);   //清空传入的动作名称字符串，避免重复执行同一动作
       pos_read_id++;
       if(pos_read_id>19) {pos_read_id=1;}    //位置读取 ID，范围 1-19
       else {Servo_ReadPos(pos_read_id);}
       flag.uart1_rx_ready = 0;    //动作执行完成后，将标志位设为未执行状态
+      // 半双工：确保在接收模式，重新开启 DMA 接收
+      HAL_HalfDuplex_EnableReceiver(&huart1);
       HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t*)uart1_rx_buf, sizeof(uart1_rx_buf));  //重新开启DMA接收
-    }
-
-    if(flag.mpu6050_data_ready==1)
-    {
-      if (MPU6050_DMP_GetEuler((float*)&pitch, (float*)&roll, (float*)&yaw) == 0)//强制转化为 float* 类型
-    {
-        /* SEGGER_RTT_printf 不支持 %f, 用整数+小数方式打印 */
-        int p_int = (int)pitch;
-        int p_frac = (int)((pitch > 0 ? pitch : -pitch) * 100.0f) % 100;
-        int r_int = (int)roll;
-        int r_frac = (int)((roll > 0 ? roll : -roll) * 100.0f) % 100;
-        int y_int = (int)yaw;
-        int y_frac = (int)((yaw > 0 ? yaw : -yaw) * 100.0f) % 100;
-        (g_mode==DEBUG) && SEGGER_RTT_printf(0, "[%lu] P:%d.%02d R:%d.%02d Y:%d.%02d\n",
-                          HAL_GetTick(), p_int, p_frac, r_int, r_frac, y_int, y_frac);
-        flag.mpu6050_data_ready=0;    //数据处理完成后，将标志位设为未接收状态
-    }
     }
 
     /* IMU数据处理 */
     {
-        IMU_Data_t *imu = IMU_GetData();
-        if (imu->updated) {
+        IMU_Data_t *imu = IMU_GetData();// 获取IMU数据指针
+
+        if (imu->updated) { // 检查是否有新数据
             int r_int = (int)imu->roll;
             int r_frac = (int)((imu->roll > 0 ? imu->roll : -imu->roll) * 100.0f) % 100;
+            roll = imu->roll;
+
             int p_int = (int)imu->pitch;
             int p_frac = (int)((imu->pitch > 0 ? imu->pitch : -imu->pitch) * 100.0f) % 100;
+            pitch = imu->pitch;
+
             int y_int = (int)imu->yaw;
             int y_frac = (int)((imu->yaw > 0 ? imu->yaw : -imu->yaw) * 100.0f) % 100;
+            yaw = imu->yaw;
+
             (g_mode==DEBUG) && SEGGER_RTT_printf(0, "[IMU] R:%d.%02d P:%d.%02d Y:%d.%02d\n",
                               r_int, r_frac, p_int, p_frac, y_int, y_frac);
-            imu->updated = 0;
+
+            imu->updated = 0;// 清除更新标志，等待下一帧数据
         }
     }
 
@@ -302,15 +276,25 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
+/**
+  * @brief  外部中断回调函数
+  * @param  GPIO_Pin: 指示哪个引脚触发了中断
+  * @retval 无
+*/
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    if (GPIO_Pin == GPIO_PIN_15)    //如果接收到数据，置标志位（DMP中断），10ms中断一次
-    {
-        flag.mpu6050_data_ready = 1;
-        (g_mode==DEBUG) && SEGGER_RTT_printf(0, "MPU6050\nData\nReady!\n");
-    }
+  if (GPIO_Pin == GPIO_PIN_0) // 检测到按键按下
+  {
+  flag.key_event = 1; // 设置按键事件标志  
+  }
 }
 
+/**
+  * @brief  UART接收事件回调函数
+  * @param  huart: UART句柄
+  * @param  Size: 接收到的数据大小
+  * @retval 无
+*/
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart,uint16_t Size)
 {
     if (huart->Instance == USART1)
@@ -323,7 +307,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart,uint16_t Size)
     }
     if (huart->Instance == USART2)
     {
-        IMU_RxEventCallback(Size);
+        IMU_RxEventCallback(Size);// 调用IMU模块的空闲中断回调函数，解析接收到的数据
     }
   }
 
@@ -333,53 +317,64 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart,uint16_t Size)
     return c;
   }
 
+  /**
+  * @brief  UART发送完成回调函数
+  * @param  huart: UART句柄
+  * @retval 无
+  */
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
     if (huart->Instance == USART1)
     {
-        // DMA 发送完成，从 FIFO 取下一包继续发
-        if (Fifo_Read(&fifo, fifo_packet)==1)
+        // 半双工：DMA 发送完成
+        uint8_t tx_len;
+        if (Fifo_Read(&fifo, fifo_packet, &tx_len)==1)
         {
-            HAL_UART_Transmit_DMA(&huart1, fifo_packet, 10);
+            // FIFO 还有数据，继续发送（使用实际包长度）
+            HAL_UART_Transmit_DMA(&huart1, fifo_packet, tx_len);
         }
-        // FIFO 空了→自动停止，等待下次 Servo_Write 触发
+        else
+        {
+            // FIFO 空了，切换到接收模式，等待舵机回传
+            HAL_HalfDuplex_EnableReceiver(&huart1);
+            HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t*)uart1_rx_buf, sizeof(uart1_rx_buf));
+        }
     }
 }
 
+/**
+  * @brief  定时器中断回调函数
+  * @param  htim: TIM句柄
+  * @retval 无
+  */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-  if (htim->Instance == TIM10) // 20ms 中断一次，读取按键状态
+  if (htim->Instance == TIM10) // 20ms 中断一次
   {
-    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET) // 按键按下
-    {
-      switch (key_state) {
-      case KEY_UP:
-        key_state = KEY_DOWN;
-        break;
-      case KEY_DOWN:
-        HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13); // 闪烁 LED
-        key_state = KEY_STAY;
-        break;
-      case KEY_STAY:
-        break;
-      default:
-        key_state = KEY_UP;
-        break;
-      }
-    } else // 按键松开
-    {
-      key_state = KEY_UP;
-    }
   }
 
   if (htim->Instance == TIM11) // 15ms 中断一次
   {
   }
 
-  if (htim->Instance == TIM4) // 100ms 中断一次，实现较长时间的非阻滞延时
+  if (htim->Instance == TIM4) // 100ms 中断一次
   {
+    HAL_ADC_Start(&hadc1); // 启动 ADC 转换
+    if (HAL_ADC_PollForConversion(&hadc1, 10) == HAL_OK) {
+      uint32_t adc_value = HAL_ADC_GetValue(&hadc1);
+      float voltage = (adc_value / 4095.0f) * 3.3f / VOLTAGE_DIVIDER_RATIO; // 电压分压系数为10K/(10K+16K)=0.384615,电池电压6.4-8.4V
+      voltage_sum = voltage_sum + voltage;
+      voltage_count++;
+
+      if (voltage_count == 10) { // 每 10 次采样计算一次平均值
+        battery_voltage = voltage_sum / voltage_count;
+        voltage_sum = 0.0f;
+        voltage_count = 0;
+      }
+    }
+    HAL_ADC_Stop(&hadc1); // 停止 ADC 转换
   }
 
-  if (htim->Instance == TIM5) // 10ms 中断一次，实现较短时间的非阻滞延时
+  if (htim->Instance == TIM5) // 10ms 中断一次
   {
   }
 }

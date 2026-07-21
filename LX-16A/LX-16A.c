@@ -1,9 +1,21 @@
+/**
+  * @file    LX-16A.c
+  * @brief   LX-16A舵机控制函数实现
+  */
+
 #include "LX-16A.h"
 #include "main.h"
 #include "string.h"
 
 extern UART_HandleTypeDef huart1;
 
+/**
+  * @brief  向舵机写入位置和时间参数
+  * @param  id: 舵机ID
+  * @param  position: 目标位置
+  * @param  time: 执行时间
+  * @retval 无
+  */
 void Servo_Write(uint8_t id, uint16_t position, uint16_t time)
 {
 uint8_t packet[10];
@@ -32,21 +44,35 @@ packet[8] = (time >> 8) & 0xFF;  // 高8位
     }
     packet[9] = ~(sum & 0xFF);
 
-    if(Fifo_Write(&fifo,packet)==1)
+    if(Fifo_Write(&fifo, packet, 10)==1)
     {
         if(huart1.gState == HAL_UART_STATE_READY)
         {
-            if(Fifo_Read(&fifo,fifo_packet)==1)
-    HAL_UART_Transmit_DMA(&huart1, fifo_packet, 10);   // 通过 USART1 的 DMA 发送数据包
+            uint8_t len;
+            if(Fifo_Read(&fifo, fifo_packet, &len)==1)
+            {
+                // 半双工：发送前中止接收，切换到发送模式
+                if (huart1.RxState != HAL_UART_STATE_READY)
+                {
+                    HAL_UART_AbortReceive(&huart1);
+                }
+                HAL_HalfDuplex_EnableTransmitter(&huart1);
+                HAL_UART_Transmit_DMA(&huart1, fifo_packet, len);   // 通过 USART1 的 DMA 发送数据包
+            }
         }
     }
 }
 
+/**
+  * @brief  停止舵机运动
+  * @param  id: 舵机ID
+  * @retval 无
+  */
 void Servo_Stop(uint8_t id)
 {
 //while(huart1.gState != HAL_UART_STATE_READY);       //等待前一次发送完毕，再发送新的数据包
 
-static uint8_t packet[6];
+uint8_t packet[6];
     
 packet[0] = 0x55;   // 包头1
 packet[1] = 0x55;   // 包头2
@@ -64,16 +90,30 @@ packet[4] = 0x0c;   // 指令序号
     }
     packet[5] = ~(sum & 0xFF);
 
-    if(Fifo_Write(&fifo,packet)==1)
+    if(Fifo_Write(&fifo, packet, 6)==1)
     {
         if(huart1.gState == HAL_UART_STATE_READY)
         {
-            if(Fifo_Read(&fifo,fifo_packet)==1)
-    HAL_UART_Transmit_DMA(&huart1, fifo_packet, 6);   // 通过 USART1 的 DMA 发送数据包
+            uint8_t len;
+            if(Fifo_Read(&fifo, fifo_packet, &len)==1)
+            {
+                // 半双工：发送前中止接收，切换到发送模式
+                if (huart1.RxState != HAL_UART_STATE_READY)
+                {
+                    HAL_UART_AbortReceive(&huart1);
+                }
+                HAL_HalfDuplex_EnableTransmitter(&huart1);
+                HAL_UART_Transmit_DMA(&huart1, fifo_packet, len);   // 通过 USART1 的 DMA 发送数据包
+            }
         }
     }
 }
 
+/**
+  * @brief  读取舵机位置
+  * @param  id: 舵机ID
+  * @retval 无
+  */
 void Servo_ReadPos(uint8_t id)
 {
     uint8_t packet[6];
@@ -89,46 +129,11 @@ void Servo_ReadPos(uint8_t id)
 
     packet[5]=~(id + 0x03 + 0x1C) & 0xFF;
 
+    // 半双工：发送前中止接收，切换到发送模式
+    if (huart1.RxState != HAL_UART_STATE_READY)
+    {
+        HAL_UART_AbortReceive(&huart1);
+    }
+    HAL_HalfDuplex_EnableTransmitter(&huart1);
     HAL_UART_Transmit_DMA(&huart1, packet, 6);
-}
-
-fifo_t fifo = {0};               // 全局 FIFO
-uint8_t fifo_packet[10]={0};        //fifo缓冲区
-
-static uint8_t Fifo_Is_Full(fifo_t *fifo)
-{
-    return (((fifo->head+1)%TX_FIFO_SIZE) == ((fifo->tail)%TX_FIFO_SIZE)) ? 1 : 0;
-}
-
-static uint8_t Fifo_Is_Empty(fifo_t *fifo)
-{
-    return ((fifo->head % TX_FIFO_SIZE) == (fifo->tail % TX_FIFO_SIZE)) ? 1 : 0;
-}
-
-uint8_t Fifo_Write(fifo_t *fifo, uint8_t fifo_packet[10])
-{
-    if(Fifo_Is_Full(fifo))
-    {
-        return 0;
-    }
-    else
-    {
-        memcpy(fifo->buf[fifo->head],fifo_packet,10);
-        fifo->head = (fifo->head+1)%TX_FIFO_SIZE;
-        return 1;
-    }
-}
-
-uint8_t Fifo_Read(fifo_t *fifo, uint8_t fifo_packet[10])
-{
-    if(Fifo_Is_Empty(fifo))
-    {
-        return 0;
-    }
-    else 
-    {
-    memcpy(fifo_packet,fifo->buf[fifo->tail],10);
-    fifo->tail = (fifo->tail+1)%TX_FIFO_SIZE;
-        return 1;
-    }
 }

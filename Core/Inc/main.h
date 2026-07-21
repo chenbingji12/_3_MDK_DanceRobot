@@ -39,12 +39,14 @@ extern "C" {
 
 typedef enum {
   DEBUG=0,
+  NORMAL,
   SINGLE_ACTION,
   CIRCULAR_DANCE
 } Mode;
 extern volatile Mode g_mode;    //动作模式枚举变量
 
 typedef struct {
+    uint8_t key_event;          //按键事件标志
     uint8_t mpu6050_data_ready;
     uint8_t uart1_rx_ready;
     uint8_t uart6_rx_ready;
@@ -75,11 +77,19 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LED_Pin GPIO_PIN_13
+#define LED_GPIO_Port GPIOC
+#define KEY_Pin GPIO_PIN_0
+#define KEY_GPIO_Port GPIOA
+#define KEY_EXTI_IRQn EXTI0_IRQn
+#define BEEP_Pin GPIO_PIN_10
+#define BEEP_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 
-#define UART1_RX_SIZE (64)
-#define UART6_RX_SIZE (30)
+#define UART1_RX_SIZE (64)//UART1 接收缓冲区大小，64 字节
+#define UART6_RX_SIZE (30)//UART6 接收缓冲区大小，30 字节
+#define VOLTAGE_DIVIDER_RATIO 0.384615f //分压系数：10K/(10K+16K)=0.384615，电压采样值=ADC采样值*3.3/4095/0.384615
 
 /* USER CODE END Private defines */
 

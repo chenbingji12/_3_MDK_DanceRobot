@@ -2,5 +2,7 @@
     "cmake.sourceDirectory": "D:/Desktop/CUBEMX_DE_WENJIAN/_3_MDK_DanceRobot/Drivers/CMSIS/NN",
     "trae.tab.enableRename": false,
     "trae.tab.enableAutoImport": true,
-    "trae.tab.cue": true
+    "trae.tab.cue": true,
+    "github.copilot.chat.claudeAgent.allowAutoPermissions": true,
+    "github.copilot.chat.claudeAgent.useSdkExtension": true
 }

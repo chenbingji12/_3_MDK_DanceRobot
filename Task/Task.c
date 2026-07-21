@@ -1,17 +1,37 @@
+/**
+  * @file    Task.c
+  * @brief   任务控制函数实现（TCB+调度器）
+  */
+
 #include "main.h"
 #include "Task.h"
 
+/**
+  * @brief  移动动作周期与激活状态
+  */
 uint32_t move_action_interval_ms = 10;   //移动任务周期，10ms
 uint8_t move_action_active = 0;   //移动任务默认不激活
 
-/*****************表驱动的时间触发合作式调度器******************/
+/**
+  * @brief  按键事件周期与激活状态，枚举定义
+  */
+uint32_t key_event_interval_ms = 15;   //按键任务周期，15ms
+extern volatile Flag flag;    //动作执行状态标志变量，初始为未执行状态
+KeyState key_state = KEY_UP;    //按键状态变量，初始为未按下状态
+
+/**
+  * @brief  表驱动的时间触发合作式调度器
+  */
 TaskDef task_table[] = {
-    {Move_Action,&move_action_interval_ms, 0, &move_action_active}
+    {Move_Action,&move_action_interval_ms, 0, &move_action_active},
+    {Key_Event,&key_event_interval_ms, 0,(uint8_t*) &flag.key_event},
 };
 
-const uint8_t task_count=sizeof(task_table) / sizeof(task_table[0]);
+const uint8_t task_count=sizeof(task_table) / sizeof(task_table[0]);// 任务表中任务的数量
 
-/**********************前后左右移动************************/
+/**
+  * @brief  移动动作控制块，前后左右
+  */
 MoveAction move_actions[] = {
 {&flag.walk_forward, Left_Step_Forward,Right_Step_Forward,1000, 3},   //前进动作，预定步数3，左右脚交替前踏，每步间隔1000ms
 {&flag.walk_backward, Left_Step_Backward,Right_Step_Backward,1000, 3},   //后退动作，预定步数3，左右脚交替后撤，每步间隔1000ms
@@ -19,6 +39,10 @@ MoveAction move_actions[] = {
 {&flag.move_to_right, Right_MoveAside,Reset_Whole,1000, 3}    //右移动作，预定步数3，左右脚交替向右移动，每步间隔1000ms
 };
 
+/**
+  * @brief  执行移动动作
+  * @retval 无
+  */
 void Move_Action(void)
 {
  static enum{IDLE,LEFT_STEP,WAIT_LEFT,RIGHT_STEP,WAIT_RIGHT} state = IDLE;   //定义状态机状态
@@ -77,6 +101,43 @@ void Move_Action(void)
  }
 }
 
+/**
+  * @brief  处理按键事件,当flag.key_event为1时,15ms执行一次
+  * @retval 无
+  */
+void Key_Event(void)
+{
+    switch (key_state)      // 根据按钮事件状态进行处理
+    {
+        case KEY_UP:
+            if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_RESET) {
+                key_state = KEY_DOWN;
+            } else {
+                flag.key_event = 0;   // 误触发，清除标志
+            }
+            break;
+        case KEY_DOWN:
+            if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_RESET) {
+                HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+                key_state = KEY_STAY;
+            } else {
+                key_state = KEY_UP;
+                flag.key_event = 0;   // 短暂按下后松开，结束
+            }
+            break;
+        case KEY_STAY:
+            if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET) {
+                key_state = KEY_UP;
+                flag.key_event = 0;   // 松开，完整周期结束
+            }
+            break;
+    }
+}
+
+/**
+  * @brief  处理任务表
+  * @retval 无
+  */
 void Task_Process(void)
 {
     for (uint8_t i = 0; i < task_count; i++)      // 遍历任务列表
