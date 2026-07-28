@@ -33,6 +33,8 @@ typedef struct {
   */
 void Slider(char *param);
 void ReadAllPos(char *param);
+void Set_Servo_Pos(char *param);
+void Read_Servo_Pos(char *param);
 
 /**
   * @brief  执行动作

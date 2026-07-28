@@ -10,6 +10,7 @@
 #include "main.h"
 #include "LX-16A.h"
 #include "Single_action.h"
+#include "I2S_beat.h"
 
 /**
   *@brief 计算动作个数
@@ -56,6 +57,7 @@ extern KeyState key_state;    //按键状态变量（定义在 Task.c）
   */
 void Move_Action(void);    //移动任务函数
 void Key_Event(void);    //按键事件处理函数
+void I2S_Beat_Action(void);    //节拍触发任务函数
 
 void Task_Process(void);    //任务处理函数
 

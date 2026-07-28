@@ -29,7 +29,6 @@
 /* Private variables ---------------------------------------------------------*/
 static UART_HandleTypeDef *s_huart = NULL;    /* USART句柄 */
 static uint8_t s_dma_buf[IMU_DMA_BUF_SIZE];   /* DMA循环接收缓冲区 */
-static uint16_t s_dma_last_pos = 0;           /* 上次处理的DMA位置 */
 static IMU_Data_t s_imu_data = {0};           /* IMU数据(全局唯一实例) */
 
 /* 帧解析状态 */
@@ -55,7 +54,6 @@ static void IMU_ParseEulerFrame(uint8_t *frame);
 void IMU_Init(UART_HandleTypeDef *huart)
 {
     s_huart = huart;
-    s_dma_last_pos = 0;
     memset(&s_imu_data, 0, sizeof(s_imu_data));
     memset(s_dma_buf, 0, sizeof(s_dma_buf));
 
@@ -75,14 +73,6 @@ void IMU_RxEventCallback(uint16_t Size)
     }
     /* 重新启动DMA接收 (HAL_UARTEx_ReceiveToIdle_DMA在触发后需手动重启) */
     HAL_UARTEx_ReceiveToIdle_DMA(s_huart, s_dma_buf, IMU_DMA_BUF_SIZE);
-}
-
-/**
-  * @brief  主循环调用, 处理IMU数据 (备用, 当前在回调中直接解析)
-  */
-void IMU_Process(void)
-{
-    /* 当前设计: 数据在空闲中断回调中即时解析, 此函数预留扩展 */
 }
 
 /**

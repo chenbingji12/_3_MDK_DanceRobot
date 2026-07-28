@@ -8,14 +8,12 @@
 
 /*************动作数据表*******************/
 
-const uint16_t Reset_Whole_Data[][3]=
-{
-   {1, 500, 0},  {2, 500, 0},  {3, 500, 0},  {4, 500, 0},
-    {5, 500, 0},  {6, 500, 0},  {7, 500, 0},  {8, 500, 0},
-    {9, 500, 0},  {10, 500, 0}, {11, 500, 0}, {12, 500, 0},
-    {13, 500, 0}, {14, 500, 0}, {15, 500, 0}, {16, 500, 0},
-    {17, 500, 0}, {18, 500, 0}
-};      //所有舵机复位
+const uint16_t Reset_Whole_Data[][3] = {
+    {1, 500, 0},  {2, 500, 0},  {3, 500, 0},  {4, 500, 0},  {5, 500, 0},
+    {6, 500, 0},  {7, 500, 0},  {8, 500, 0},  {9, 500, 0},  {10, 500, 0},
+    {11, 500, 0}, {12, 500, 0}, {13, 500, 0}, {14, 500, 0}, {15, 500, 0},
+    {16, 500, 0}, {17, 500, 0}, {18, 500, 0}, {19, 500, 0}
+}; // 所有舵机复位
 
 static const uint16_t Left_Hand_Up_Data[][3]=
 {
@@ -123,6 +121,42 @@ void ReadAllPos(char *param)
     Servo_ReadPos(pos_read_id);
 }
 
+/**
+  * @brief  设置舵机角度
+  * @param  param: 参数字符串
+  * @retval 无
+  */
+void Set_Servo_Pos(char *param)
+{
+    int servo_id,servo_angle,servo_time;
+    if(sscanf(param,"%d %d %d",&servo_id,&servo_angle,&servo_time)==3)
+    {
+        Servo_Write((uint8_t)servo_id,(uint16_t)servo_angle,servo_time);
+        printf("Set_Servo_Pos success:%d %d %d\n",servo_id,servo_angle,servo_time);
+    }
+    else{
+        printf("Set_Servo_Pos error:%s\n",param);
+    }
+}
+
+/**
+  * @brief  读取舵机角度
+  * @param  param: 参数字符串
+  * @retval 舵机角度
+  */
+void Read_Servo_Pos(char *param)
+{
+    int servo_id;
+    if(sscanf(param,"%d",&servo_id)==1)
+    {
+        uint16_t angle=Servo_ReadPos((uint8_t)servo_id);
+        printf("Read_Servo_Pos success:%d\n",angle);
+    }
+    else{
+        printf("Read_Servo_Pos error:%s\n",param);
+    }
+}
+
 /**************薄函数，供外部调用***************/
 /**
   * @brief  复位所有舵机
@@ -198,7 +232,7 @@ static void Set_Move_Flag(char name[UART6_RX_SIZE])     //根据传入的动作�
 /**
   * @brief  执行动作
   * @param  a: 动作参数数组
-  * @param  count: 动作数量
+  * @param  count: 舵机数量
   * @retval 无
   */
 void Take_Action(const uint16_t a[][3], uint8_t count)        //根据传入的动作参数数组，依次调用舵机控制函数执行相应动作
@@ -250,8 +284,10 @@ static const Action action[] = {
     {"stand_likegongjian", 0, Stand_LikeGongJian_Data,
      sizeof(Stand_LikeGongJian_Data) / sizeof(Stand_LikeGongJian_Data[0]), 0,NULL},
     {"squat", 0, Squat_Data, sizeof(Squat_Data) / sizeof(Squat_Data[0]),0,NULL},
-    {"[s ", 1, NULL,NULL,0,Slider},
-    {"read_all_pos",0,NULL,NULL,0,ReadAllPos}
+    //{"[s ", 1, NULL,NULL,0,Slider},
+    {"read_all_pos",0,NULL,NULL,0,ReadAllPos},
+    {"set ",1,NULL,NULL,0,Set_Servo_Pos},
+    {"read ",1,NULL,NULL,0,Read_Servo_Pos},
 }; // 动作表，存放所有动作的名称和对应的函数指针
 
 /**************查找动作名称字符串在动作表中的位置***********/
@@ -267,8 +303,7 @@ void Single_Action(char *name) // 根据传入的动作名称字符串，在动�
     {
       if (action[i].is_circular == 0) // 如果是单次动作
       {
-        if (strcmp(action[i].name, name) ==
-            0) // 如果是单次动作，直接调用函数执行
+        if (strcmp(action[i].name, name) ==0) // 如果是单次动作，直接调用函数执行
         {
           Take_Action(action[i].data, action[i].count);
           return;

@@ -20,6 +20,7 @@
 #include "main.h"
 #include "adc.h"
 #include "dma.h"
+#include "i2s.h"
 #include "iwdg.h"
 #include "tim.h"
 #include "usart.h"
@@ -34,9 +35,10 @@
 #include "LX-16A.h"
 #include "Single_action.h"
 #include "Task.h"
-#include "Circular_dance.h"
 #include "IMU.h"
 #include "FIFO.h"
+#include "I2S_beat.h"
+#include "Leg_action.h"
 
 /* USER CODE END Includes */
 
@@ -129,6 +131,7 @@ int main(void)
   MX_TIM5_Init();
   MX_USART2_UART_Init();
   MX_ADC1_Init();
+  MX_I2S2_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_Base_Start_IT(&htim10);     //启动 TIM10
@@ -142,6 +145,9 @@ HAL_UARTEx_ReceiveToIdle_DMA(&huart1,(uint8_t*) uart1_rx_buf, sizeof(uart1_rx_bu
 HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_buf));   //开启 USART6 的 DMA 接收，接收数据存入 uart6_rx_buf
 
 IMU_Init(&huart2);    //启动IMU模块DMA接收
+
+I2S_Beat_Init();    //启动 I2S2 DMA 循环接收
+//flag.beat_active = 1;   //节拍检测任务激活
 
 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
 
@@ -180,46 +186,44 @@ HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
 
     if(flag.uart1_rx_ready == 1)//来自舵机的指令
     {
-      printf("%s",uart1_rx_buf);
-      (g_mode==DEBUG) && SEGGER_RTT_printf(0,"[DMA] USART1 received, executing action: %s\n", uart1_rx_buf);
+      (g_mode==DEBUG) && printf("%s",uart1_rx_buf);
 //      (g_mode==DEBUG) && printf("uart1_rx_buf: %s\n", uart1_rx_buf);
       memset((char*)uart1_rx_buf, 0, UART1_RX_SIZE);   //清空传入的动作名称字符串，避免重复执行同一动作
-      pos_read_id++;
-      if(pos_read_id>19) {pos_read_id=1;}    //位置读取 ID，范围 1-19
-      else {Servo_ReadPos(pos_read_id);}
       flag.uart1_rx_ready = 0;    //动作执行完成后，将标志位设为未执行状态
       // 半双工：确保在接收模式，重新开启 DMA 接收
       HAL_HalfDuplex_EnableReceiver(&huart1);
       HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t*)uart1_rx_buf, sizeof(uart1_rx_buf));  //重新开启DMA接收
     }
 
-    /* IMU数据处理 */
-    {
-        IMU_Data_t *imu = IMU_GetData();// 获取IMU数据指针
+//    /* IMU数据处理 */
+//    {
+//        IMU_Data_t *imu = IMU_GetData();// 获取IMU数据指针
 
-        if (imu->updated) { // 检查是否有新数据
-            int r_int = (int)imu->roll;
-            int r_frac = (int)((imu->roll > 0 ? imu->roll : -imu->roll) * 100.0f) % 100;
-            roll = imu->roll;
+//        if (imu->updated) { // 检查是否有新数据
+//            int r_int = (int)imu->roll;
+//            int r_frac = (int)((imu->roll > 0 ? imu->roll : -imu->roll) * 100.0f) % 100;
+//            roll = imu->roll;
 
-            int p_int = (int)imu->pitch;
-            int p_frac = (int)((imu->pitch > 0 ? imu->pitch : -imu->pitch) * 100.0f) % 100;
-            pitch = imu->pitch;
+//            int p_int = (int)imu->pitch;
+//            int p_frac = (int)((imu->pitch > 0 ? imu->pitch : -imu->pitch) * 100.0f) % 100;
+//            pitch = imu->pitch;
 
-            int y_int = (int)imu->yaw;
-            int y_frac = (int)((imu->yaw > 0 ? imu->yaw : -imu->yaw) * 100.0f) % 100;
-            yaw = imu->yaw;
+//            int y_int = (int)imu->yaw;
+//            int y_frac = (int)((imu->yaw > 0 ? imu->yaw : -imu->yaw) * 100.0f) % 100;
+//            yaw = imu->yaw;
 
-            (g_mode==DEBUG) && SEGGER_RTT_printf(0, "[IMU] R:%d.%02d P:%d.%02d Y:%d.%02d\n",
-                              r_int, r_frac, p_int, p_frac, y_int, y_frac);
+//            (g_mode==DEBUG) && SEGGER_RTT_printf(0, "[IMU] R:%d.%02d P:%d.%02d Y:%d.%02d\n",
+//                              r_int, r_frac, p_int, p_frac, y_int, y_frac);
 
-            imu->updated = 0;// 清除更新标志，等待下一帧数据
-        }
-    }
+//            imu->updated = 0;// 清除更新标志，等待下一帧数据
+//        }
+//    }
+
+    Leg_Action_Process();    //腿部动作处理函数
 
     Task_Process();    //任务处理函数
-		
-		tick = HAL_GetTick();
+
+//		tick = HAL_GetTick();
 
 //(g_mode==DEBUG) && SEGGER_RTT_printf(0,"Tick:%d\n",HAL_GetTick());
     HAL_IWDG_Refresh(&hiwdg);   // 喂独立看门狗，防止复位,2048ms
@@ -311,9 +315,15 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart,uint16_t Size)
     }
   }
 
+  /**
+  * @brief  字符输出函数
+  * @param  c: 要输出的字符
+  * @param  f: 文件指针
+  * @retval 输出的字符
+  */
   int fputc(int c, FILE *f)
   {
-    HAL_UART_Transmit(&huart6, (uint8_t *)&c, 1,0xFFFF);//将字符发送到上位机
+    HAL_UART_Transmit(&huart6, (uint8_t *)&c, 1,10);//将字符发送到上位机
     return c;
   }
 

@@ -48,12 +48,6 @@ void IMU_Init(UART_HandleTypeDef *huart);
 void IMU_RxEventCallback(uint16_t Size);
 
 /**
-  * @brief  主循环中调用, 解析DMA缓冲区中的IMU数据帧
-  * @retval 无
-  */
-void IMU_Process(void);
-
-/**
   * @brief  获取最新IMU数据指针
   * @retval IMU_Data_t指针
   */

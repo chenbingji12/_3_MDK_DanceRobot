@@ -4,5 +4,6 @@
     "trae.tab.enableAutoImport": true,
     "trae.tab.cue": true,
     "github.copilot.chat.claudeAgent.allowAutoPermissions": true,
-    "github.copilot.chat.claudeAgent.useSdkExtension": true
+    "github.copilot.chat.claudeAgent.useSdkExtension": true,
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }

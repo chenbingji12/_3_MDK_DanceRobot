@@ -15,9 +15,19 @@ uint8_t move_action_active = 0;   //移动任务默认不激活
 /**
   * @brief  按键事件周期与激活状态，枚举定义
   */
-uint32_t key_event_interval_ms = 15;   //按键任务周期，15ms
+uint32_t key_event_interval_ms = 13;   //按键任务周期，13ms
 extern volatile Flag flag;    //动作执行状态标志变量，初始为未执行状态
 KeyState key_state = KEY_UP;    //按键状态变量，初始为未按下状态
+
+/**
+  * @brief  节拍检测任务周期与激活状态
+  */
+uint32_t beat_task_interval_ms = 6;   //节拍任务周期，6ms
+
+/**
+  * @brief  当检测到节拍时翻转电平任务
+  */
+uint32_t beat_action_task_interval_ms = 11;   //节拍触发任务周期，11ms
 
 /**
   * @brief  表驱动的时间触发合作式调度器
@@ -25,6 +35,8 @@ KeyState key_state = KEY_UP;    //按键状态变量，初始为未按下状态
 TaskDef task_table[] = {
     {Move_Action,&move_action_interval_ms, 0, &move_action_active},
     {Key_Event,&key_event_interval_ms, 0,(uint8_t*) &flag.key_event},
+    {I2S_Beat_Task,&beat_task_interval_ms, 0, (uint8_t*)&flag.beat_active},
+    {I2S_Beat_Action,&beat_action_task_interval_ms, 0, (uint8_t*)&flag.beat_active},
 };
 
 const uint8_t task_count=sizeof(task_table) / sizeof(task_table[0]);// 任务表中任务的数量
@@ -132,6 +144,20 @@ void Key_Event(void)
             }
             break;
     }
+}
+
+/**
+  * @brief  处理节拍动作任务
+  * @retval 无
+  */
+void I2S_Beat_Action(void)
+{
+  static uint8_t last_beat = 0;   //记录上一次节拍状态
+  if(I2S_Beat_IsBeat() && !last_beat)   //检测到节拍触发瞬间
+  {
+    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+  }
+  last_beat = I2S_Beat_IsBeat();   //更新上一次节拍状态
 }
 
 /**
