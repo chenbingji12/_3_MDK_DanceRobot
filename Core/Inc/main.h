@@ -32,6 +32,20 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "SEGGER_RTT.h"
+#include "SEGGER_RTT_Conf.h"
+#include "string.h"
+#include "stdio.h"
+#include "LX-16A.h"
+#include "Single_action.h"
+#include "Task.h"
+#include "IMU.h"
+#include "FIFO.h"
+#include "I2S_beat.h"
+#include "Leg_action.h"
+#include "Location_deal.h"
+#include "Body_action.h"
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

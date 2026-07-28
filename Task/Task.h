@@ -6,11 +6,7 @@
 #ifndef __TASK_H
 #define __TASK_H
 
-#include "stm32f4xx.h"                  // Device header
 #include "main.h"
-#include "LX-16A.h"
-#include "Single_action.h"
-#include "I2S_beat.h"
 
 /**
   *@brief 计算动作个数
@@ -31,18 +27,6 @@ extern TaskDef task_table[];   // 任务表，存放所有任务的控制块
 extern const uint8_t task_count;
 
 /**
-  *@brief 移动动作控制块
-  */
-typedef struct {
-   volatile uint8_t *move_flag;          //动作指令
-    void (*task_func_1)(void);   //动作函数1指针
-    void (*task_func_2)(void);   //动作函数2指针
-    uint32_t wait_time_ms;    // 任务的等待时间 (单位：毫秒)
-    uint8_t count;              // 任务执行次数
-} MoveAction;
-extern MoveAction move_actions[];   // 动作表，存放所有动作的控制块
-
-/**
   *@brief 按键状态枚举
   */
 typedef enum {
@@ -55,7 +39,6 @@ extern KeyState key_state;    //按键状态变量（定义在 Task.c）
 /**
   *@brief 任务处理函数
   */
-void Move_Action(void);    //移动任务函数
 void Key_Event(void);    //按键事件处理函数
 void I2S_Beat_Action(void);    //节拍触发任务函数
 

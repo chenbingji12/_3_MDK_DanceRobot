@@ -29,17 +29,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "SEGGER_RTT.h"
-#include "SEGGER_RTT_Conf.h"
-#include "string.h"
-#include "LX-16A.h"
-#include "Single_action.h"
-#include "Task.h"
-#include "IMU.h"
-#include "FIFO.h"
-#include "I2S_beat.h"
-#include "Leg_action.h"
-
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -195,29 +184,29 @@ HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
       HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t*)uart1_rx_buf, sizeof(uart1_rx_buf));  //重新开启DMA接收
     }
 
-//    /* IMU数据处理 */
-//    {
-//        IMU_Data_t *imu = IMU_GetData();// 获取IMU数据指针
+    /* IMU数据处理 */
+    {
+        IMU_Data_t *imu = IMU_GetData();// 获取IMU数据指针
 
-//        if (imu->updated) { // 检查是否有新数据
-//            int r_int = (int)imu->roll;
-//            int r_frac = (int)((imu->roll > 0 ? imu->roll : -imu->roll) * 100.0f) % 100;
-//            roll = imu->roll;
+        if (imu->updated) { // 检查是否有新数据
+            int r_int = (int)imu->roll;
+            int r_frac = (int)((imu->roll > 0 ? imu->roll : -imu->roll) * 100.0f) % 100;
+            roll = imu->roll;
 
-//            int p_int = (int)imu->pitch;
-//            int p_frac = (int)((imu->pitch > 0 ? imu->pitch : -imu->pitch) * 100.0f) % 100;
-//            pitch = imu->pitch;
+            int p_int = (int)imu->pitch;
+            int p_frac = (int)((imu->pitch > 0 ? imu->pitch : -imu->pitch) * 100.0f) % 100;
+            pitch = imu->pitch;
 
-//            int y_int = (int)imu->yaw;
-//            int y_frac = (int)((imu->yaw > 0 ? imu->yaw : -imu->yaw) * 100.0f) % 100;
-//            yaw = imu->yaw;
+            int y_int = (int)imu->yaw;
+            int y_frac = (int)((imu->yaw > 0 ? imu->yaw : -imu->yaw) * 100.0f) % 100;
+            yaw = imu->yaw;
 
-//            (g_mode==DEBUG) && SEGGER_RTT_printf(0, "[IMU] R:%d.%02d P:%d.%02d Y:%d.%02d\n",
-//                              r_int, r_frac, p_int, p_frac, y_int, y_frac);
+            (g_mode==DEBUG) && SEGGER_RTT_printf(0, "[IMU] R:%d.%02d P:%d.%02d Y:%d.%02d\n",
+                              r_int, r_frac, p_int, p_frac, y_int, y_frac);
 
-//            imu->updated = 0;// 清除更新标志，等待下一帧数据
-//        }
-//    }
+            imu->updated = 0;// 清除更新标志，等待下一帧数据
+        }
+    }
 
     Leg_Action_Process();    //腿部动作处理函数
 

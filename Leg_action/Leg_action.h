@@ -6,9 +6,7 @@
 #ifndef __LEG_ACTION_H
 #define __LEG_ACTION_H
 
-#include "stm32f4xx.h"                  // Device header
 #include "main.h"
-#include "LX-16A.h"
 
 extern const uint16_t Walk_Forward_Data[][15][3]; // 行走前进动作数据
 extern const uint8_t Walk_Forward_Count; // 行走前进动作的帧数

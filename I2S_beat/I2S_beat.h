@@ -9,7 +9,7 @@
 #define I2S_BEAT_H
 
 #include "main.h"
-#include <stdint.h>
+//#include <stdint.h>
 
 /* 单个半缓冲的样本数 (16-bit PCM)
  * 16kHz 下: 256 样本 = 16ms, 足够响应节拍 */

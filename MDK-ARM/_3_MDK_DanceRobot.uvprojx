@@ -1367,6 +1367,11 @@
               <FileType>5</FileType>
               <FilePath>..\Single_action\Single_action.h</FilePath>
             </File>
+            <File>
+              <FileName>Single_action_data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Single_action\Single_action_data.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1491,6 +1496,11 @@
               <FileName>Body_action.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Body_action\Body_action.h</FilePath>
+            </File>
+            <File>
+              <FileName>Body_action.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Body_action\Body_action.c</FilePath>
             </File>
           </Files>
         </Group>

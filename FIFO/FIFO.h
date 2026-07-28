@@ -6,9 +6,7 @@
 #ifndef __FIFO_H
 #define __FIFO_H
 
-#include "stm32f4xx.h"                  // Device header
 #include "main.h"
-#include "string.h"
 
 #define TX_FIFO_SIZE 30      //定义FIFO环形缓冲区大小
 

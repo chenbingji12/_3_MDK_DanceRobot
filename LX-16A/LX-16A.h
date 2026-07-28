@@ -6,9 +6,7 @@
 #ifndef __LX_16A_H
 #define __LX_16A_H
 
-#include "stm32f4xx.h"                  // Device header
 #include "main.h"
-#include "FIFO.h"
 
 /**
   * @brief  舵机写入的结构体,10 字节：舵机移动指令 (CMD=0x01)
