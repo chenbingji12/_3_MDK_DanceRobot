@@ -1,14 +1,17 @@
-///**
-// * @file    Location_deal.h
-// * @brief   位置处理函数声明
-// */
+/**
+ * @file    Location_deal.h
+ * @brief   位置处理函数声明
+ */
 
-// #ifndef __LOCATION_DEAL_H
-// #define __LOCATION_DEAL_H
+ #ifndef __LOCATION_DEAL_H
+ #define __LOCATION_DEAL_H
 
-// #include "main.h"
+ #include "main.h"
 
-//void Location_deal_GetIMUData(void);
-//void Location_deal_ZeroYaw(void);
+void Location_deal_Init(void);
+void Location_deal_GetIMUData(void);
+void Location_deal_ZeroYaw(void);
+void Location_deal_CalcYawError(void);
+void Location_deal_ClearYawError(void);
 
-// #endif
+ #endif

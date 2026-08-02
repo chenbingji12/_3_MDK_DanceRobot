@@ -63,8 +63,10 @@ void ReadAllPos(char *param)
     for(servo_id=1;servo_id<=19;servo_id++)
     {
         uint16_t angle=Servo_ReadPos((uint8_t)servo_id);
-        printf("ReadAllPos success:%d %d\n",servo_id,angle);
+        printf("Read_Servo_Pos success:%d %d\n",servo_id,angle);
+        HAL_IWDG_Refresh(&hiwdg);   // 喂独立看门狗，防止复位,2048ms
     }
+    printf("ReadAllPos success\n");
 }
 
 /**
@@ -88,6 +90,28 @@ void Stop(char *param)
     printf("Stop success\n");
 }
 
+/**
+ * @brief   软件归零（设置当前yaw为0度）
+ * @retval  无
+ */
+void Zero_Yaw(char *param)
+{
+    Location_deal_ZeroYaw();//软件归零
+    flag.zero_yaw = 1;    //设置软件归零标志为已归零
+    printf("Zero_Yaw success\n");
+}
+
+/**
+ * @brief   取消软件归零（设置当前yaw角度为默认值）
+ * @retval  无
+ */
+void Off_Zero_Yaw(char *param)
+{
+    flag.zero_yaw = 0;    //设置软件归零标志为未归零
+    Location_deal_ClearYawError();//清空软件归零与yaw角度偏差
+    printf("Off_Zero_Yaw success\n");
+}
+
 /***********************动作数组定义*********************/
 static const Action action[] = {
     {"reset_whole", 0, 0,Reset_Whole},
@@ -95,6 +119,8 @@ static const Action action[] = {
     {"set ",1,0,Set_Servo_Pos},
     {"read ",1,0,Read_Servo_Pos},
     {"stop",0,0,Stop},
+    {"zero_yaw",0,0,Zero_Yaw},
+    {"off_zero_yaw",0,0,Off_Zero_Yaw},
 }; // 动作表，存放所有动作的名称和对应的函数指针
 
 /**************查找动作名称字符串在动作表中的位置***********/
@@ -118,8 +144,7 @@ void Single_Action(char *name) // 根据传入的动作名称字符串，在动�
       {
         uint8_t len = strlen(action[i].name);
         if (strncmp((const char *)action[i].name, name, len) == 0) {
-          action[i].handler(name +
-                            len); // 将指令前缀之后的“参数部分”传递给业务函数
+          action[i].handler(name + len); // 将指令前缀之后的“参数部分”传递给业务函数
           return;
         }
       }

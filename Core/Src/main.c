@@ -56,7 +56,7 @@ volatile Flag flag = {0};    //动作执行状态标志变量，初始为未执�
 
 volatile uint32_t tick = 0;    //时间截，单位毫秒
 
-volatile float pitch = 0.0f, roll = 0.0f, yaw = 0.0f;    //欧拉角，单位度
+//volatile float pitch = 0.0f, roll = 0.0f, yaw = 0.0f;    //欧拉角，单位度
 
 volatile uint8_t uart1_rx_buf[UART1_RX_SIZE];   // USART1 接收缓冲区，64 字节
 volatile uint8_t uart6_rx_buf[UART6_RX_SIZE];   // USART6 接收缓冲区，30 字节
@@ -135,6 +135,8 @@ HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_bu
 
 IMU_Init(&huart2);    //启动IMU模块DMA接收
 
+Location_deal_Init();//初始化IMU数据
+
 I2S_Beat_Init();    //启动 I2S2 DMA 循环接收
 //flag.beat_active = 1;   //节拍检测任务激活
 
@@ -184,33 +186,11 @@ HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
       HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t*)uart1_rx_buf, sizeof(uart1_rx_buf));  //重新开启DMA接收
     }
 
-    /* IMU数据处理 */
-    {
-        IMU_Data_t *imu = IMU_GetData();// 获取IMU数据指针
-
-        if (imu->updated) { // 检查是否有新数据
-            int r_int = (int)imu->roll;
-            int r_frac = (int)((imu->roll > 0 ? imu->roll : -imu->roll) * 100.0f) % 100;
-            roll = imu->roll;
-
-            int p_int = (int)imu->pitch;
-            int p_frac = (int)((imu->pitch > 0 ? imu->pitch : -imu->pitch) * 100.0f) % 100;
-            pitch = imu->pitch;
-
-            int y_int = (int)imu->yaw;
-            int y_frac = (int)((imu->yaw > 0 ? imu->yaw : -imu->yaw) * 100.0f) % 100;
-            yaw = imu->yaw;
-
-            (g_mode==DEBUG) && SEGGER_RTT_printf(0, "[IMU] R:%d.%02d P:%d.%02d Y:%d.%02d\n",
-                              r_int, r_frac, p_int, p_frac, y_int, y_frac);
-
-            imu->updated = 0;// 清除更新标志，等待下一帧数据
-        }
-    }
-
     Leg_Action_Process();    //腿部动作处理函数
 
     Task_Process();    //任务处理函数
+
+    Location_deal_GetIMUData();    //获取当前IMU数据
 
 //		tick = HAL_GetTick();
 
@@ -353,6 +333,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
   if (htim->Instance == TIM11) // 15ms 中断一次
   {
+    if(flag.zero_yaw == 1)//如果软件归零标志为已归零
+    {
+        Location_deal_CalcYawError();//计算当前yaw角度的偏差
+    }
   }
 
   if (htim->Instance == TIM4) // 100ms 中断一次

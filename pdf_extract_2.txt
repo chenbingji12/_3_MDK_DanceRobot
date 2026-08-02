@@ -1,0 +1,384 @@
+
+--- Page 1 ---
+
+PSX Controllers 页 码 ,1/8
+
+索 尼 PLAYSTATION® 手 柄 原 理 分 析
+
+ANi-> 0 © Of 0 oO Of 0 oO 0 |
+\
+
+/
+
+针 脚 # 作 用
+
+DATA
+
+COMMAND
+
+N/C (9 Volts unused)
+GND
+
+VCC
+
+ATT
+
+CLOCK
+
+N/C
+
+ACK
+
+巳 山 厂 门 小 历 巳 一
+
+DATA
+信 名 流 向 从 手 桧 刹 主 机 :
+此 借 号 是 一 个 8 bit 的 帝 行 数 据 # 同 步 传 送 于 智 铁 下 降 波 ( 输 狄 输 i 愈 号 在 时 钟 借 号 由 高
+到 低 时 变 化 , 所 有 信 号 的 读 取 在 时 钟 前 沿 到 电 平 变 化 之 前 完 成 。 )
+COMMAND
+信 号 流 向 从 主 机 到 手 柄 :
+此 信 号 和 DATA 相 对 , 同 样 是 一 个 8 bit 的 串 行 数 据 , 同 步 传 送 于 时 钟 下 降 沿 。
+VCC
+电 源 电 压 从 5V 到 3V 原 装 的 索 尼 手 柄 都 可 以 工 作 。
+置…】三〕I钞[】昔夕f耆,二乏…[二睾昌有呈浠~乏蒯'′′′亡g…装[【I{J75[)T【_」霭_ 保 险 丝 , 用 于 防 止 外 设 过 载 (750m 是 包 括 左 右 手 桧
+和 记 忆 卡 ) 。
+ATT
+ATT 用 于 提 供 手 柄 触 发 信 号 。
+信 号 在 通 信 期 闰 处 于 低 电 平 。 又 有 人 将 此 针 脚 叫 做 Select, DIR 和 Command.
+CLOCK
+信 号 流 向 从 主 机 到 扎 柄 。
+用 于 保 持 数 据 同 步 。
+ACK
+从 手 柄 到 主 机 的 应 答 信 号 。
+此 信 号 在 每 个 8 bits 数 据 发 送 之 后 的 最 后 一 个 时 钟 周 期 变 低 , 并 且 ATT 一 直 保 低 电 平 。
+如 果 ACK 信 号 不 变 低 约 60 微 秒 PS 主 机 会 试 另 一 个 外 设 。
+
+http: //member. netease. com/” jack/hwinfo/psxcont/psxcont. htm 2004-12-11
+
+
+--- Page 2 ---
+
+PSX Controllers WEY, 2/8
+
+PS 手 柄 信 号
+
+先 行 。 在 PS 手 柄 总 线 的 所 有 时 码 在 时 钟 下 降 沿 都 是
+
+所 有 通 讯 都 是 8 bit 丨 行 数 据 最 低 有 效 位
+同 步 的 。 传 送 一 个 字 节 的 情 况 如 下 所 示 。
+
+|AT BT AT AAT AT 4 BT SAT OAT 7
+
+数 据 线 的 逻 辑 电 平 在 时 铁 下 降 沿 弟 劣 下 触 发 改 变 。 数 据 的 接 收 读 取 在 时 钟 的 前 沿 ( 在 记 号
+红 》 刺 电 升 受 化 之 剧 完 成 “ 伯 故 途 扬 怡 探 怀 备 平 coMbRAD 晟 号 之 炼 “ 手 标 霜 把 何 A 町 孙 圭
+塔 后 一 个 时 钟 。 如 果 被 选 手 柄 没 ACK 应 答 主 机 将 假 定 没 扎 柄 接 入 。
+
+PS 主 机 想 读 一 个 手 柄 的 数 据 时 , 将 会 拉 低 ATT 线 电 平 并 发 出 一 个 开 始 命 令 (0x01) 。 手 柄 将
+
+会 回 复 它 的 ID (0x41-= 数 字 ,0x23-NegCon,0x73= 模 拟 红 灯 ,0x53- 模 拟 绿 灯 )、 在 手 柄 发 送 ID
+
+辜二暮F亘_寺署′I茎蚤痔〕丨门]F丨哑_主〕丨【几才-掌壬1喹′兰〕亢羞〔]】【′丢2 请 求 数 据 。 随 后 命 令 线 将 空 闲 和 手 柄 送 出 0x5A 意 思 说 : “ 数 据
+J".
+
+下 面 是 一 个 数 字 手 柄 的 时 钟 信 号
+
+AIT
+| Bytet | | Byte2 | | Bes |
+
+QUO wen ws we ee See ee
+
+OxFF 0x41 Ox5A
+DATA -------------------------
+
+0x01 0x42
+QD ----- = ot sxsusmasesusesesveuees
+On 民 旷 具 - 心 具 - a ne eS ees
+
+在 手 枯 执 行 初 始 化 命 令 之 后 将 发 送 它 所 有 的 数 据 字 节 〔 数 字 手 柄 只 有 两 个 字 节 ) 。 在 最 后 守
+节 发 送 之 后 使 ATT 高 电 平 , 手 柄 无 需 ACK 应 答 。
+
+数 字 手 柄 的 数 据 传 送 如 下 所 示 ( 这 里 A0, Al, A2. . . B6, B7 是 两 个 字 节 的 数 据 比 特 ) 。
+AT eens
+GK sous u 2 owes ne Fm 沥 9 peeeeees
+
+DATA — --- DODICRD8D4060607- - - - EDE1 E2ESE4ESEBE7- - - - - --
+
+PS 手 柄 数 据
+下 面 五 个 表 显 示 手 柄 的 实 际 发 送 守 节
+
+http: //member. netease. com/” jack/hwinfo/psxcont/psxcont. htm 2004-12-11
+
+
+--- Page 3 ---
+
+PSX Controllers
+
+标 准 数 字 手 柄
+
+BYTE OQWD DATA
+01 x01 idle
+02 0x42 0x41
+03 idle Ox5A
+04 idle data
+05 idle data
+所 有 按 键 按 下 有 效 。
+NegQon
+
+BYTE “QWD DATA
+01 0x01 idle
+02 0x42 0x23
+03 idle Ox5A
+04 idle data
+05 idle data
+06 idle data
+07 idle data
+08 idle data
+09 idle data
+所 有 按 键 按 下 有 效 .
+模 拟 手 柄 红 灯 模 式
+BYTE MD DATA
+01 0x01 ide
+02 0x42 “0x73
+03 idle Ox5A
+04 idle data
+05 idle data
+06 idle data
+07 ide data
+08 idle data
+09 ide data
+所 有 按 键 按 下 有 效 。
+模 拟 手 柄 绿 灯 模 式
+BYTE MD DATA
+01 Ox0! idle
+02 0x42 “0x53
+03 idle Ox5A
+04 ide data
+05 idle data
+06 idle data
+07 ~idle data
+08 idle data
+09 idle data
+所 有 按 键 按 下 有 效 ,
+
+http://member. netease. com/ jack/hwinfo/psxcont/psxcont. htm
+
+BtO 日 t1 Bt2 日 t3 Bt4 Bt5 ote Bt7
+S.CT STRT LP RCHT DDW LEFT
+l2 Re UR /\ O XxX 。
+
+BtO Ati Bt2 Bt3 Bt4 Bt5 Bte Bt7
+STAT LP AGHT DO/W LEFT
+RA B
+
+Steering 0x00 = Aght OxFF = Left
+
+1 Button 0x00 = Qt OxFF = 1n
+
+|| Button 0x00 = Qt “0xFF = 1n
+
+L1 Button 0x00 = Qt “ 0xFF = 1n
+
+日 t0 一 t1 Bt2 日 t3 t4 工 t5 日 t6 日 t7
+S.CT JOR JOM. STRT LP ,RaH [CDW LEFT
+1 洁 广 F2 自 目 恩 目 瑞 5 河 一 相 |
+Aight Joy 0x00 = Left 0xFF = A ght
+Aight Joy 0x00 = Lb “ 0xFF = Dom
+Left Joy 0x00 = Left OxFF = A ght
+Left Joy 0x00 = Ub 0xFF = Dom
+
+日 t0 日 t1 日 t2 日 t3 日 t4 日 t5 日 t6 Bt7
+STRT LP CHT DDW LEFT
+os Ae “ 小 A 8 R “_O “ 义 “ 尸
+
+F ght Joy 0x00 = Left 0xFF = F ght
+Aight Joy 0x00 = Lp —OxFF = Dom
+Left Joy 0x00 = Left OxFF = Aght
+Left Joy 0x00 = lb 0xFF = Dom
+
+页 码 ,3/8
+
+2004-12-11
+
+
+--- Page 4 ---
+
+PSX Controllers 页 码 ,4/8
+
+PFS 鼠 标
+(credit to T Fujita)
+BYTE AD DATA
+
+01 0x01 ide
+
+02 Ox42 0x12
+
+03 ide OxSA “ Bt0 Gti Bt2 Bt3 日 t4 Bt5 Bté Bt7
+04 idle  OxFF
+
+05 id e data L “ 尾
+
+06 idle data Delta Vertical
+
+07 idje data Delta Hbrizont a
+
+所 有 按 键 按 下 有 效 。
+
+用 74XX 逻 辑 电 路 仿 真 PS 手 柄
+
+这 个 电 路 能 设 置 到 仿 真 一 个 数 字 手 柄 , 一 个 模 拟 手 柄 ( 两 种 模 式 ) 或 一 个 NegCon。 本 电 路 使
+用 了 六 块 74XX IC 仿 真 一 个 数 字 手 柄 , 如 仿 真 一 个 模 拟 手 柄 要 多 出 块 74XX IC’ 和 出 块 A/D 转
+换 器 , 同 样 仿 真 一 个 NegCon 手 柄 一 样 要 多 四 枝 74XX IC 和 四 块 A/D 转 换 器 。
+
+电 路 如 何 工 作
+
+MATT 电 平 被 主 机 拉 低 , 反 相 器 4/4A | : lsss “ 一
+拉 高 74HC165 的 SHy!LD 脚 . 串 口 输 入 崛
+
+脚 读 入 数 据 ( 图 中 只 画 了 五 坚 IC 中 的 H = Te cade at)
+
+二 块 ) 。 反 相 器 1/4& 为 HC165 提 供 时 | < 怠 t od f
+钟 信 号 , 因 此 在 PS 坂 机 输 出 的 CLK 信
+号 的 每 个 下 降 泥 HC165 移 出 数 据 的 下
+一 比 特 。 数 据 经 由 ATT 信 号 接 制 的 反
+相 器 274B 门 电 路 输 出 , 使 到 哟 有 被 选
+的 设 备 才 能 接 入 总 线 。
+
+读 进 HCI65 的 数 据 的 智 码 关 系 如 以 上
+图 表 所 示 。 看 回 图 表 所 示 第 一 宇 节 是
+0xFF, 意 思 是 从 &l PIAS 全 是 高 位 :
+下 一 个 字 节 是 手 柄 ID。 数 据 手 柄 的 ID 是 0x41 即 B1I-8 是 HLLLLLLHL 排 列 。 再 下 一 个 宇 节 是 数
+菖菖奢′′『渥置{壹【r〕衰卞〕「 ia BCI-8 为 HLHLLHLHs。 最 后 两 个 字 节 是 表 示 按 键 情 况 , 当 没 按 下 为 高 电 平 ,
+下 为 低 电 平 。
+
+Ack 信 号 由 反 相 器 1/4A,2/4A 和 1/4B 产 生 。 二 极 管 D1 只 允 许 出 CLK 低 时 反 相 器 1/4A 对 C1
+FE. CLK 高 位 时 间 比 RL/C1 设 定 的 长 , 反 相 器 2/44 将 输 出 高 电 平 。 高 电 平 经 过 C2 到 反 相
+al /4B 输 出 低 脉 冲 , 由 ATT 信 号 控 制 门 电 路 输 出 ( 避 免 争 夺 心 线 ) 。
+
+用 微 处 理 器 仿 真 PS 手 柄
+
+循 处 理 器 使 用 Motorola 68HCL1。 运 行 代 码 使 用
+用 汇 编 , 可 内 置 或 使 用 任 何 52 脚 的 EEPROM。
+
+http://member. netease. eomy“ jack/hwinfo/psxcont/psxcont. htm 2004-12-11
+
+
+--- Page 5 ---
+
+PSX Controllers 页 码 ,5/8
+
+电 路 如 何 工 作
+
+本 电 路 使 用 一 片 Motorola MC68HC11 完 成 所 有 工 作 。 状 态 的 读 入 使 用 16 路 N/0 (normaly open)
+TAMA 在 电 路 的 左 边 。 四 路 模 拟 输 入 在 右 边 。 数 据 发 送 使 用 了 芯 片 两 个 串 行 口 中 的 一
+
+门 。
+
+囡 个 跳 线 控 制 电 路 的 工 作 情 况 J1 跳 线 在 电 路 板 顶 部 控 制 HC1l1 工 作 在 两 种 操 作 模 式 中 的 一
+种 s 当 J1 打 开 时 微 处 理 器 运 行 在 单 芯 片 模 式 , 闭 合 时 在 特 殊 的 bootstrap 模 式 。
+
+J2,3 和 4 选 择 仿 真 何 种 PS 手 柄 , 如 下 表 所 示 s
+
+凶 个 模 拟 输 入 在 电 路 的 右 上 角 设 计 外 接 电 位 器 。 电 位 器 值 苯 没 规 定 一 般 用 10K 到 50K 较 灵
+敏 。 三 条 线 分 别 接 中 点 , 电 源 和 地 如 下 所 示 。
+
+丸
+TT IS 1%
+YY NX
+
+|
+|
+O
+2 PAN1
+
+电 路 板 下 面 的 九 个 插 座 连 到 PS 主 机 给 微 处 理 器 程 序 使 用 。 各 脚 作 用 如 下 。
+
+SCI RX FOR RS-232 comms (not used by psx)
+
+[ 一
+[ 一 5 一
+厂
+
+http: //member. netease. comy/ jack/hwinfo/psxcont/psxcont. htm 2004-12-11
+
+
+--- Page 6 ---
+
+PSX Controllers 页 码 ,6/8
+
+[3 DATA (pin 1 on PSX)
+
+CLOCK (pin 2 on PSX)
+COMMAND (pin 7 on PSX)
+
+[? VCC (pin 5 on PSX)
+[8 ACK (pin 9 on PSX)
+[9 [eND (pin 4 on PSX) |
+
+最 后 在 电 路 板 下 部 的 LVI (low voltage inhibitor) 作 用 是 保 持 HC11 在 复 位 状 态 当 没 足 够 电
+压 安 全 运 行 时 。 如 果 你 找 不 到 可 以 不 用 不 影 响 电 路 工 作 但 可 能 导 至 过 流 烧 保 险 线 。
+
+电 路 板
+
+- 八 1N414B
+
+上 面 电 路 板 所 用 元 件 的 编 号 及 珩 号 如 下
+
+元 件 表
+
+Ul MC68HC11LE2
+
+U2 MC 34064 Low voltage inhibitor
+XTAL 8Mhz 智 振
+
+http://member. netease. eomiy jack/hwinfo/psxcont/psxcont. htm 2004-12-11
+
+
+--- Page 7 ---
+
+PSX Controllers ty, 7/8
+
+Cl, C2 18pF 瓷 片 电 容
+
+C3, C4 luF mono or MKT 电 容
+RI LOM 电 阻
+
+R2-~ R5 4K7 电 阳
+
+RP1 4K7 x 9 电 阻 排
+
+CON] 9 脚 插 座
+
+D1- D16 IN4148 二 极 管
+
+Jl 引 导 模 式 跳 线
+
+J2- Ja 手 制 模 式 跟 线
+
+PoTI- 4 模 拟 输 入
+Button 1- 16 16 路 跳 线 开 关
+
+软 件
+
+软 件 包 包 括 电 路 板 PCB A (auto/easytrax 格 式 ) 这 里 下 载 PSXCONT. ZIP
+
+HC11 的 下 载 软 件
+
+程 序 包 括 在 ZIP 文 件 中 , 文 件 名 EELOADER- EXE. 这 是 一 个 IBM 执 行 文 件 用 作 下 载 代 码 进 HC11。
+
+九 针 连 接 日 的 第 一 、 三 望 是 一 个 5V RS232 口 , 可 以 通 过 如 下 一 个 MAX232 转 换 器 连 接 到 任 何
+IBM 萧 容 PC 的 丨 口 上 。
+
+力 M 一 口 卫 二 口 口
+
+http://member. netease. comy/ jack/hwinfo/psxcont/psxcont. htm 2004-12-11
+
+
+--- Page 8 ---
+
+PSX Controllers 页 码 ,8/8
+莹趸菖重蜃堑′庄]，文圭垂妾至幔f)′J[=E丨4〕P(〕串 口 , 打 EELOD PSO. st9 /C ,x 是 使 用 的 丨 口 , 接 着 按 屏 幕 上 的 指
+
+@ 1998 Andrew J MeCubbin
+Maintained by androwm@quicknet. com. au
+
+http://member. netease. com/” jack/hwinfo/psxcont/psxcont. htm 2004-12-11

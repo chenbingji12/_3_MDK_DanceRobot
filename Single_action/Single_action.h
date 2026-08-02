@@ -33,6 +33,10 @@ void Set_Servo_Pos(char *param);
 void Read_Servo_Pos(char *param);
 void Stop(char *param);
 
+/*********************上位机控制IMU软件归零指令****************/
+void Zero_Yaw(char *param);
+void Off_Zero_Yaw(char *param);
+
 /*******************上位机直接设置整体动作****************/
 void Reset_Whole(char *param);
 

@@ -32,6 +32,7 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "iwdg.h"
 #include "SEGGER_RTT.h"
 #include "SEGGER_RTT_Conf.h"
 #include "string.h"
@@ -62,6 +63,7 @@ extern volatile Mode g_mode;    //动作模式枚举变量
 typedef struct {
     uint8_t key_event;          //按键事件标志
     uint8_t beat_active;        //节拍检测任务激活标志
+    uint8_t zero_yaw;           //软件归零标志
     uint8_t uart1_rx_ready;
     uint8_t uart6_rx_ready;
     uint8_t walk_forward;
