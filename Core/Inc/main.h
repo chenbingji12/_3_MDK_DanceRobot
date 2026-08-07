@@ -37,6 +37,8 @@ extern "C" {
 #include "SEGGER_RTT_Conf.h"
 #include "string.h"
 #include "stdio.h"
+#include "math.h"
+#include "stdlib.h"
 #include "LX-16A.h"
 #include "Single_action.h"
 #include "Task.h"
@@ -46,6 +48,8 @@ extern "C" {
 #include "Leg_action.h"
 #include "Location_deal.h"
 #include "Body_action.h"
+#include "Optical_flow.h"
+#include "WS2812.h"
 
 /* USER CODE END Includes */
 
@@ -70,6 +74,7 @@ typedef struct {
     uint8_t walk_backward;
     uint8_t move_to_left;
     uint8_t move_to_right;
+    uint8_t flow_active;        //光流任务激活标志
 } Flag;
 extern volatile Flag flag;    //动作执行状态标志变量
 
@@ -98,13 +103,15 @@ void Error_Handler(void);
 #define KEY_Pin GPIO_PIN_0
 #define KEY_GPIO_Port GPIOA
 #define KEY_EXTI_IRQn EXTI0_IRQn
+#define L_R_Pin GPIO_PIN_14
+#define L_R_GPIO_Port GPIOB
 #define BEEP_Pin GPIO_PIN_10
 #define BEEP_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 
 #define UART1_RX_SIZE (64)//UART1 接收缓冲区大小，64 字节
-#define UART6_RX_SIZE (30)//UART6 接收缓冲区大小，30 字节
+#define UART6_RX_SIZE (100)//UART6 接收缓冲区大小，100 字节
 #define VOLTAGE_DIVIDER_RATIO 0.384615f //分压系数：10K/(10K+16K)=0.384615，电压采样值=ADC采样值*3.3/4095/0.384615
 
 /* USER CODE END Private defines */

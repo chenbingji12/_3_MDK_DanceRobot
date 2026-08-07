@@ -20,8 +20,10 @@
 #include "main.h"
 #include "adc.h"
 #include "dma.h"
+#include "i2c.h"
 #include "i2s.h"
 #include "iwdg.h"
+#include "spi.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -59,7 +61,7 @@ volatile uint32_t tick = 0;    //时间截，单位毫秒
 //volatile float pitch = 0.0f, roll = 0.0f, yaw = 0.0f;    //欧拉角，单位度
 
 volatile uint8_t uart1_rx_buf[UART1_RX_SIZE];   // USART1 接收缓冲区，64 字节
-volatile uint8_t uart6_rx_buf[UART6_RX_SIZE];   // USART6 接收缓冲区，30 字节
+volatile uint8_t uart6_rx_buf[UART6_RX_SIZE];   // USART6 接收缓冲区，100 字节
 
 uint8_t pos_read_id=1;    //位置读取 ID，初始为 1，范围 1-19
 
@@ -121,6 +123,9 @@ int main(void)
   MX_USART2_UART_Init();
   MX_ADC1_Init();
   MX_I2S2_Init();
+  MX_SPI1_Init();
+  MX_I2C1_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_Base_Start_IT(&htim10);     //启动 TIM10
@@ -137,8 +142,13 @@ IMU_Init(&huart2);    //启动IMU模块DMA接收
 
 Location_deal_Init();//初始化IMU数据
 
+OpticalFlow_Init();//初始化光流模块 (PMW3901 SPI1+DMA + VL53LXX I2C1)
+flag.flow_active = 1;   //光流任务激活
+
 I2S_Beat_Init();    //启动 I2S2 DMA 循环接收
 //flag.beat_active = 1;   //节拍检测任务激活
+
+WS2812_Init();    //启动WS2812B灯带驱动
 
 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
 
@@ -154,13 +164,13 @@ HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
 
     /* USER CODE BEGIN 3 */
 
-    if(battery_voltage < 7.0f)   //电池电压低于7.0V，提示用户更换电池
+    if(battery_voltage < 6.7f)   //电池电压低于6.7V，提示用户更换电池
     {
       (g_mode==DEBUG) && SEGGER_RTT_printf(0,"[Warning] Battery voltage is low: %.2fV, please replace the battery!\n", battery_voltage);
 //      (g_mode==DEBUG) && printf("[Warning] Battery voltage is low: %.2fV, please replace the battery!\n", battery_voltage);
       HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_SET);   //蜂鸣器响
     }
-    else if(battery_voltage >= 7.1f)   //电池电压恢复正常，蜂鸣器不响,迟滞区间0.1V，避免频繁响起
+    else if(battery_voltage >= 6.8f)   //电池电压恢复正常，蜂鸣器不响,迟滞区间0.1V，避免频繁响起
     {
       HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_RESET);   //蜂鸣器不响
     }
@@ -188,11 +198,15 @@ HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
 
     Leg_Action_Process();    //腿部动作处理函数
 
+    WS2812_Process();    //WS2812B灯带数据处理
+
+    Arm_Action_Process();    //机械臂动作处理函数
+
     Task_Process();    //任务处理函数
 
     Location_deal_GetIMUData();    //获取当前IMU数据
 
-//		tick = HAL_GetTick();
+		tick = HAL_GetTick();
 
 //(g_mode==DEBUG) && SEGGER_RTT_printf(0,"Tick:%d\n",HAL_GetTick());
     HAL_IWDG_Refresh(&hiwdg);   // 喂独立看门狗，防止复位,2048ms
@@ -276,7 +290,9 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart,uint16_t Size)
     }
     if (huart->Instance == USART6)
     {
-        flag.uart6_rx_ready=1;    //DMA发送标志位为1，表示数据已接收完毕
+      HAL_UART_DMAStop(&huart6);
+      uart6_rx_buf[Size] = '\0';
+      flag.uart6_rx_ready=1;    //DMA发送标志位为1，表示数据已接收完毕
     }
     if (huart->Instance == USART2)
     {

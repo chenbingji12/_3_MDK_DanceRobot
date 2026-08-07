@@ -17,7 +17,7 @@
   * @brief  定义动作结构体
   */
 typedef struct {
-    char name[30];      //动作名称
+    char name[100];      //动作名称
     uint8_t is_prefix;  //是否完全匹配，0为完全匹配，1为前缀匹配
     uint8_t is_circular;  //是否为循环动作标志，1表示循环动作，0表示单次动作
     void (*handler)(char *param);    //指针函数，单个指令
@@ -39,6 +39,10 @@ void Off_Zero_Yaw(char *param);
 
 /*******************上位机直接设置整体动作****************/
 void Reset_Whole(char *param);
+void Arm_Action1(char *param);
+
+/********************手柄控制指令****************/
+void Gamepad_Control(char *param);
 
 /*******************查找命令***************/
 void Single_Action(char *name);

@@ -112,6 +112,139 @@ void Off_Zero_Yaw(char *param)
     printf("Off_Zero_Yaw success\n");
 }
 
+/**
+ * @brief   游戏手柄远程遥控数据处理
+ * @param  param: 参数字符串
+ * @retval  无
+ */
+void Gamepad_Control(char *param)
+{
+    int lx,ly,rx,ry,lt,rt,btns;
+    char d;
+    static uint8_t btns_flag1=0;//按钮状态标志位，用于判断是否需要读取舵机角度
+    static uint8_t btns_flag2=0;//按钮状态标志位，用于判断是否需要改变摇杆比例系数
+    static float p=0.0001f;//摇杆比例系数
+    static float servo_1=500.0f;
+    static float servo_2=500.0f;
+    static float servo_3=500.0f;
+    static float servo_4=500.0f;
+    if(sscanf(param,"%d,LY:%d,RX:%d,RY:%d,LT:%d,RT:%d,BTNS:%d,D:%c",&lx,&ly,&rx,&ry,&lt,&rt,&btns,&d)==8)
+    {
+      if((btns_flag1==0)&&(btns/100==1))//左摇杆按键按下
+      {
+        btns_flag1=1;//按钮按下，不允许读取舵机角度
+        servo_1=Servo_ReadPos(1);
+        servo_2=Servo_ReadPos(2);
+        servo_3=Servo_ReadPos(3);
+        servo_4=Servo_ReadPos(4);
+      }
+      if(btns/200==1)//右摇杆按键按下
+      {
+        for(uint8_t id=1;id<=4;id++)
+        {
+          Servo_Write(id,500,0);
+        }
+      }
+      if(btns/100==0)
+      {
+        btns_flag1=0;//按钮松开，允许读取舵机角度
+      }
+
+      if((btns_flag2==0)&&(btns%100/40==1))//减号按键按下
+      {
+        btns_flag2=1;//按钮按下，不允许改变摇杆比例系数
+        p=p*0.8f;
+      }
+      if((btns_flag2==0)&&(btns%100/80==1))//加号按键按下
+      {
+        btns_flag2=1;//按钮按下，不允许改变摇杆比例系数
+        p=p*1.25f;
+      }
+      if(btns%100/10==0)
+      {
+        btns_flag2=0;//按钮松开，允许改变摇杆比例系数
+      }
+
+      if(btns%100/10==1)//左侧按键按下
+      {
+
+      }
+      if(btns%100/20==1)//右侧按键按下
+      {
+
+      }
+
+      if(btns%10/1==1)//A按键按下
+      {
+
+      }
+      if(btns%10/2==1)//B按键按下
+      {
+
+      }
+      if(btns%10/4==1)//Y按键按下
+      {
+
+      }
+      if(btns%10/8==1)//X按键按下
+      {
+
+      }
+
+      if(lt>0)//左扳机按下
+      {
+
+      }
+      else if(lt==0)
+      {
+
+      }
+      if(rt>0)//右扳机按下
+      {
+
+      }
+      else if(rt==0)
+      {
+
+      }
+
+      switch(d)//方向键按下
+      {
+        case 'U':
+          break;
+        case 'D':
+          break;
+        case 'L':
+          break;
+        case 'R':
+          break;
+        default:
+          break;
+      }
+
+      if(abs(lx)>260)
+      {
+      servo_1=servo_1+lx*p;
+      Servo_Write(1, (uint16_t)servo_1, 0);
+      }
+      if(abs(ly)>260)
+      {
+      servo_2=servo_2+ly*p;
+      Servo_Write(2, (uint16_t)servo_2, 0);
+      }
+      if(abs(rx)>260)
+      {
+      servo_3=servo_3+rx*p;
+      Servo_Write(3, (uint16_t)servo_3, 0);
+      }
+      if(abs(ry)>260)
+      {
+      servo_4=servo_4+ry*p;
+      Servo_Write(4, (uint16_t)servo_4, 0);
+      }
+    }
+}
+
 /***********************动作数组定义*********************/
 static const Action action[] = {
     {"reset_whole", 0, 0,Reset_Whole},
@@ -121,6 +254,12 @@ static const Action action[] = {
     {"stop",0,0,Stop},
     {"zero_yaw",0,0,Zero_Yaw},
     {"off_zero_yaw",0,0,Off_Zero_Yaw},
+    {"LX:",1,0,Gamepad_Control},
+    {"arm_action_1",0,0,Arm_Action_1},
+    {"arm_action_2",0,0,Arm_Action_2},
+    {"led_test",0,0,WS2812_TestCmd},
+    {"led_fill ",1,0,WS2812_FillCmd},
+    {"led_off",0,0,WS2812_OffCmd},
 }; // 动作表，存放所有动作的名称和对应的函数指针
 
 /**************查找动作名称字符串在动作表中的位置***********/

@@ -30,12 +30,18 @@ uint32_t beat_task_interval_ms = 6;   //节拍任务周期，6ms
 uint32_t beat_action_task_interval_ms = 11;   //节拍触发任务周期，11ms
 
 /**
+  * @brief  光流任务周期
+  */
+uint32_t flow_task_interval_ms = 10;   //光流任务周期，10ms (100Hz)
+
+/**
   * @brief  表驱动的时间触发合作式调度器
   */
 TaskDef task_table[] = {
     {Key_Event,&key_event_interval_ms, 0,(uint8_t*) &flag.key_event},
     {I2S_Beat_Task,&beat_task_interval_ms, 0, (uint8_t*)&flag.beat_active},
     {I2S_Beat_Action,&beat_action_task_interval_ms, 0, (uint8_t*)&flag.beat_active},
+    {OpticalFlow_Process, &flow_task_interval_ms, 0, (uint8_t*)&flag.flow_active},
 };
 
 const uint8_t task_count=sizeof(task_table) / sizeof(task_table[0]);// 任务表中任务的数量
