@@ -23,7 +23,6 @@
 #include "i2c.h"
 #include "i2s.h"
 #include "iwdg.h"
-#include "spi.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -123,9 +122,9 @@ int main(void)
   MX_USART2_UART_Init();
   MX_ADC1_Init();
   MX_I2S2_Init();
-  MX_SPI1_Init();
   MX_I2C1_Init();
   MX_TIM3_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_Base_Start_IT(&htim10);     //启动 TIM10
@@ -141,9 +140,6 @@ HAL_UARTEx_ReceiveToIdle_DMA(&huart6, (uint8_t*)uart6_rx_buf, sizeof(uart6_rx_bu
 IMU_Init(&huart2);    //启动IMU模块DMA接收
 
 Location_deal_Init();//初始化IMU数据
-
-OpticalFlow_Init();//初始化光流模块 (PMW3901 SPI1+DMA + VL53LXX I2C1)
-flag.flow_active = 1;   //光流任务激活
 
 I2S_Beat_Init();    //启动 I2S2 DMA 循环接收
 //flag.beat_active = 1;   //节拍检测任务激活
@@ -166,7 +162,7 @@ HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
 
     if(battery_voltage < 6.7f)   //电池电压低于6.7V，提示用户更换电池
     {
-      (g_mode==DEBUG) && SEGGER_RTT_printf(0,"[Warning] Battery voltage is low: %.2fV, please replace the battery!\n", battery_voltage);
+//      (g_mode==DEBUG) && SEGGER_RTT_printf(0,"[Warning] Battery voltage is low: %.2fV, please replace the battery!\n", battery_voltage);
 //      (g_mode==DEBUG) && printf("[Warning] Battery voltage is low: %.2fV, please replace the battery!\n", battery_voltage);
       HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_SET);   //蜂鸣器响
     }
@@ -197,8 +193,6 @@ HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
     }
 
     Leg_Action_Process();    //腿部动作处理函数
-
-    WS2812_Process();    //WS2812B灯带数据处理
 
     Arm_Action_Process();    //机械臂动作处理函数
 
@@ -360,7 +354,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     HAL_ADC_Start(&hadc1); // 启动 ADC 转换
     if (HAL_ADC_PollForConversion(&hadc1, 10) == HAL_OK) {
       uint32_t adc_value = HAL_ADC_GetValue(&hadc1);
-      float voltage = (adc_value / 4095.0f) * 3.3f / VOLTAGE_DIVIDER_RATIO; // 电压分压系数为10K/(10K+16K)=0.384615,电池电压6.4-8.4V
+      float voltage = (adc_value / 4009.09f) * 3.3f / VOLTAGE_DIVIDER_RATIO; // 电压分压系数为10K/(10K+16K)=0.384615,电池电压6.4-8.4V
       voltage_sum = voltage_sum + voltage;
       voltage_count++;
 

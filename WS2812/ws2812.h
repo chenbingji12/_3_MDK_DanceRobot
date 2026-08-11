@@ -1,8 +1,8 @@
 /**
  * @file    ws2812.h
  * @brief   WS2812B灯带PWM+DMA驱动头文件
- * @note    基于TIM3_CH3(PB0)环形DMA+HT/TC双缓冲
- *          硬件初始化由CubeMX管理, 本模块仅负责数据编码与刷新
+ * @note    基于TIM3_CH3(PB0)环形DMA整帧循环发送
+ *          DMA永不停止, TC中断中重建缓冲, 无闪烁
  */
 
 #ifndef __WS2812_H
@@ -12,22 +12,19 @@
 #include "main.h"
 
 /*============================================================================
- * 灯带参数
+ * 灯带参数 (ARR=124, 800kHz PWM)
  *============================================================================*/
 
 /* LED数量 */
-#define WS2812_LED_COUNT        250U
+#define WS2812_LED_COUNT        60U
 
-/* 每次DMA中断(半缓冲)处理的LED数量 */
-#define WS2812_LEDS_PER_DMA_IRQ 4U
+/* 缓冲区LED总数: 真实LED + 末尾3颗全零(帧间复位 ≈ 90μs > 50μs) */
+#define WS2812_BUF_LED_COUNT    (WS2812_LED_COUNT + 3U)
 
-/* DMA缓冲区大小: 双半缓冲 × 每半4颗LED × 每颗24bit */
-#define WS2812_DMA_BUF_SIZE     (2U * WS2812_LEDS_PER_DMA_IRQ * 24U)
+/* DMA缓冲区大小: 整帧(含帧间复位) */
+#define WS2812_DMA_BUF_SIZE     (WS2812_BUF_LED_COUNT * 24U)
 
-/* Reset低电平脉冲数(>50us, 800kHz下50脉冲=62.5us) */
-#define WS2812_RESET_PULSES     50U
-
-/* PWM CCR值: 0码和1码 (ARR=124, 800kHz)
+/* PWM CCR值: 0码和1码
  * 0码 ≈ 0.4us → CCR=40 (40/125 = 32%)
  * 1码 ≈ 0.8us → CCR=80 (80/125 = 64%) */
 #define WS2812_CCR_0            40U
@@ -51,7 +48,7 @@ typedef struct {
 /**
  * @brief  初始化WS2812驱动, 配置TIM3+DMA+GPIO并启动输出
  * @note   必须在MX_DMA_Init()之后调用
- *         启动后自动连续刷新LED, 通过WS2812_Process()维持数据流
+ *         启动后自动循环发送整帧(60LED+复位脉冲)
  */
 void WS2812_Init(void);
 
@@ -65,10 +62,11 @@ void WS2812_Init(void);
 void WS2812_SetLED(uint16_t idx, uint8_t r, uint8_t g, uint8_t b);
 
 /**
- * @brief  填充全部LED为同一颜色
+ * @brief  填充全部LED为同一颜色 (下次TC中断生效)
  * @param  r     红色分量 0-255
  * @param  g     绿色分量 0-255
  * @param  b     蓝色分量 0-255
+ * @note   仅更新颜色数组+置标志, TC中断中重建缓冲, DMA不停机
  */
 void WS2812_Fill(uint8_t r, uint8_t g, uint8_t b);
 
@@ -82,13 +80,6 @@ void WS2812_Clear(void);
  * @retval LED数量
  */
 uint16_t WS2812_GetLEDCount(void);
-
-/**
- * @brief  主循环处理函数, 维持DMA数据流
- * @note   非阻塞, 应在主循环每次迭代中调用
- *         检查HT/TC标志, 填充下一批LED数据到DMA缓冲
- */
-void WS2812_Process(void);
 
 /*============================================================================
  * 命令处理函数 (供Single_action命令表使用)

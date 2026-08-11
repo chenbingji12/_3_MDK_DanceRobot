@@ -30,9 +30,9 @@ uint32_t beat_task_interval_ms = 6;   //节拍任务周期，6ms
 uint32_t beat_action_task_interval_ms = 11;   //节拍触发任务周期，11ms
 
 /**
-  * @brief  光流任务周期
+  * @brief  WS2812B灯带刷新任务周期与激活状态
   */
-uint32_t flow_task_interval_ms = 10;   //光流任务周期，10ms (100Hz)
+uint32_t ws2812_change_interval_ms = 39;   //WS2812B灯带刷新任务周期，39ms
 
 /**
   * @brief  表驱动的时间触发合作式调度器
@@ -41,7 +41,7 @@ TaskDef task_table[] = {
     {Key_Event,&key_event_interval_ms, 0,(uint8_t*) &flag.key_event},
     {I2S_Beat_Task,&beat_task_interval_ms, 0, (uint8_t*)&flag.beat_active},
     {I2S_Beat_Action,&beat_action_task_interval_ms, 0, (uint8_t*)&flag.beat_active},
-    {OpticalFlow_Process, &flow_task_interval_ms, 0, (uint8_t*)&flag.flow_active},
+    {WS2812_Change,&ws2812_change_interval_ms,0,(uint8_t*)&flag.ws2812_change},
 };
 
 const uint8_t task_count=sizeof(task_table) / sizeof(task_table[0]);// 任务表中任务的数量
@@ -91,6 +91,70 @@ void I2S_Beat_Action(void)
     HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
   }
   last_beat = I2S_Beat_IsBeat();   //更新上一次节拍状态
+}
+
+/**
+ * @brief   ws2812颜色渐变
+ */
+void WS2812_Change(void)
+{
+    static uint8_t red = 0;
+    static uint8_t green = 0;
+    static uint8_t blue = 0;
+
+    static uint8_t red_direction = 1;   // 红色分量变化方向，1表示增加，0表示减少
+    static uint8_t green_direction = 1; // 绿色分量变化方向，1表示增加，0表示减少
+    static uint8_t blue_direction = 1;  // 蓝色分量变化方向，1表示增加，0表示减少
+
+    if(red>=250)
+    {
+      red_direction=0;   // 红色分量达到最大值，改变方向为减少
+    }
+    else if(red<=5)
+    {
+      red_direction=1;   // 红色分量达到最小值，改变方向为增加
+    }
+    if(red_direction==1)
+    {
+      red++;
+    }
+    else if(red_direction==0)
+    {
+      red--;
+    }
+    if(green>=250)
+    {
+      green_direction=0;   // 绿色分量达到最大值，改变方向为减少
+    }
+    else if(green<=5)
+    {
+      green_direction=1;   // 绿色分量达到最小值，改变方向为增加
+    }
+    if(green_direction==1)
+    {
+      green=green+2;
+    }
+    else if(green_direction==0)
+    {
+      green=green-2;
+    }
+    if(blue>=250)
+    {
+      blue_direction=0;   // 蓝色分量达到最大值，改变方向为减少
+    }
+    else if(blue<=5)
+    {
+      blue_direction=1;   // 蓝色分量达到最小值，改变方向为增加
+    }
+    if(blue_direction==1)
+    {
+      blue=blue+3;
+    }
+    else if(blue_direction==0)
+    {
+      blue=blue-3;
+    }
+    WS2812_Fill(red, green, blue);
 }
 
 /**

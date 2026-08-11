@@ -67,6 +67,7 @@ extern volatile Mode g_mode;    //动作模式枚举变量
 typedef struct {
     uint8_t key_event;          //按键事件标志
     uint8_t beat_active;        //节拍检测任务激活标志
+    uint8_t ws2812_change;
     uint8_t zero_yaw;           //软件归零标志
     uint8_t uart1_rx_ready;
     uint8_t uart6_rx_ready;
