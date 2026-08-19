@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "lastTopic": "我要学习I2C通信，结合我的项目里的光流模块的通信协议C:\\Users\\39042\\AppData\\Local\\Temp\\modlens-dsh-paste-XYzFko\\paste.png",
+  "topics": {
+    "四足机器人步态（最好与我的项目代码适配）": {
+      "topic": "四足机器人步态（最好与我的项目代码适配）",
+      "level": "beginner",
+      "round": 3,
+      "stage": 5,
+      "roadmap": [
+        "HAL I2C 全景：一个句柄、四大家族函数、三种模式（阻塞/IT/DMA）",
+        "CubeMX 与句柄：I2C_HandleTypeDef、hi2c1 配置项逐条含义",
+        "四大家族函数签名精讲：Master_Transmit/Receive、Mem_Write/Read 每个参数",
+        "阻塞 vs 中断 vs DMA：怎么选、回调函数、非阻塞改造",
+        "错误处理与总线卡死：HAL_StatusTypeDef、IsDeviceReady、DeInit/Init 复位",
+        "实践：把光流读取升级为 IT 版本 + 统一项目里的 I2C 调用"
+      ],
+      "currentNode": "实践：把光流读取升级为 IT 版本 + 统一项目里的 I2C 调用",
+      "learned": [
+        {
+          "concept": "I2C物理层：SDA/SCL两根线、主从机、开漏+上拉",
+          "mastery": 0.85,
+          "note": "用户答出'有地址'（只有被寻址的从机应答），核心直觉建立",
+          "at": 1786891866648
+        },
+        {
+          "concept": "I2C地址：7位地址、读写位、0x31<<1的由来",
+          "mastery": 0.8,
+          "note": "用户之前就答过'知道左移原因'，本课补充了 HAL 宏 I2C_7BIT_ADD_WRITE/READ 的机制",
+          "at": 1786895236961
+        },
+        {
+          "concept": "I2C寄存器读写时序：START/STOP/ACK/NACK、Mem_Read 的先写指针再读",
+          "mastery": 0.8,
+          "note": "答对 buffer[0]=flow_x低字节；NACK 答成'释放总线'，需澄清 NACK=别发了，STOP 才是释放总线",
+          "at": 1786895649500
+        },
+        {
+          "concept": "光流模块协议解析：13字节寄存器表、小端拼接、valid标志",
+          "mastery": 0.8,
+          "note": "前两问答对；换算练习未作答，讲解时已给出完整推导",
+          "at": 1786895759187
+        },
+        {
+          "concept": "实践：完善 Optical_flow.c（修 NULL 指针、高低字节拼接、加 valid 判断）",
+          "mastery": 0.75,
+          "note": "四坑原理与修法已讲解；用户要求恢复原代码以便自己动手，已给不剧透线索卡，上板前须修坑①",
+          "at": 1786897331075
+        },
+        {
+          "concept": "扩展：调试技巧（IsDeviceReady/超时/重试）、总线上多设备共存",
+          "mastery": 0.8,
+          "note": "分层排查法、错误码指纹、重试模式、多设备共存铁律已讲解；掉线策略设计题未答，已给推荐方案",
+          "at": 1786897464961
+        }
+      ],
+      "weakPoints": [],
+      "history": [
+        {
+          "round": 1,
+          "startedAt": 1786766954475,
+          "endedAt": 1786891837493,
+          "summary": "用户选择重新开始"
+        },
+        {
+          "round": 2,
+          "startedAt": 1786766954475,
+          "endedAt": 1786897464965,
+          "summary": "完成I2C六课路线：物理层(开漏+上拉+主从)→7位地址与读写位(0x31<<1)→寄存器读写时序(Mem_Read先写指针再读)→光流13字节协议解析(小端拼接/valid)→实践体检(空指针/拼接/valid四坑,用户选择自行修复)→调试技巧(分层排查/重试/多设备共存)。用户已能正确回答寻址、寄存器偏移、NACK语义等问题；待办：亲手修Optical_flow.c四坑并上板验证。"
+        }
+      ],
+      "active": false,
+      "createdAt": 1786766954475,
+      "updatedAt": 1786897630241
+    },
+    "我要学习I2C通信，结合我的项目里的光流模块的通信协议C:\\Users\\39042\\AppData\\Local\\Temp\\modlens-dsh-paste-XYzFko\\paste.png": {
+      "topic": "我要学习I2C通信，结合我的项目里的光流模块的通信协议C:\\Users\\39042\\AppData\\Local\\Temp\\modlens-dsh-paste-XYzFko\\paste.png",
+      "level": "beginner",
+      "round": 1,
+      "stage": 4,
+      "roadmap": [
+        "HAL I2C 全景：一个句柄、四大家族函数、三种模式（阻塞/IT/DMA）",
+        "CubeMX 与句柄：I2C_HandleTypeDef、hi2c1 配置项逐条含义",
+        "四大家族函数签名精讲：Master_Transmit/Receive、Mem_Write/Read 每个参数",
+        "阻塞 vs 中断 vs DMA：怎么选、回调函数、非阻塞改造",
+        "错误处理与总线卡死：HAL_StatusTypeDef、IsDeviceReady、DeInit/Init 复位",
+        "实践：把光流读取升级为 IT 版本 + 统一项目里的 I2C 调用"
+      ],
+      "currentNode": "错误处理与总线卡死：HAL_StatusTypeDef、IsDeviceReady、DeInit/Init 复位",
+      "learned": [
+        {
+          "concept": "HAL I2C 全景：一个句柄、四大家族函数、三种模式",
+          "mastery": 0.85,
+          "note": "能区分 Master/Mem 家族与阻塞/IT/DMA；WHO_AM_I→Mem_Read 的选择题未答，已给答案",
+          "at": 1786897887402
+        },
+        {
+          "concept": "CubeMX 与句柄：I2C_HandleTypeDef、hi2c1 配置项逐条含义",
+          "mastery": 0.85,
+          "note": "已掌握句柄三区(配置/状态/传输)与Init各字段；用户强调教学须结合STM32CubeMX图形界面讲解",
+          "at": 1786936777903
+        },
+        {
+          "concept": "四大家族函数签名精讲：Master_Transmit/Receive、Mem_Write/Read 每个参数",
+          "mastery": 0.8,
+          "note": "参数逐条讲解完成；用户要求不再确认直接讲下一课，后续教学省略确认题",
+          "at": 1786938714213
+        },
+        {
+          "concept": "阻塞 vs 中断 vs DMA：怎么选、回调函数、非阻塞改造",
+          "mastery": 0.7,
+          "note": "重讲后理解了阻塞→IT的迁移流程和回调机制，推进到错误处理（用户最大痛点）",
+          "at": 1786980475404
+        }
+      ],
+      "weakPoints": [],
+      "history": [],
+      "active": true,
+      "createdAt": 1786891275160,
+      "updatedAt": 1786980475409
+    }
+  }
+}

@@ -280,12 +280,12 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart,uint16_t Size)
 {
     if (huart->Instance == USART1)
     {
+			if (huart->RxEventType == HAL_UART_RXEVENT_HT) return;  // 忽略半满事件,等 IDLE
         flag.uart1_rx_ready=1;    //DMA发送标志位为1，表示数据已接收完毕
     }
     if (huart->Instance == USART6)
     {
-      HAL_UART_DMAStop(&huart6);
-      uart6_rx_buf[Size] = '\0';
+			if (huart->RxEventType == HAL_UART_RXEVENT_HT) return;  // 忽略半满事件,等 IDLE
       flag.uart6_rx_ready=1;    //DMA发送标志位为1，表示数据已接收完毕
     }
     if (huart->Instance == USART2)

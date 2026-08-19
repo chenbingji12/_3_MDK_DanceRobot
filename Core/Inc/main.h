@@ -71,11 +71,16 @@ typedef struct {
     uint8_t zero_yaw;           //软件归零标志
     uint8_t uart1_rx_ready;
     uint8_t uart6_rx_ready;
+    uint8_t init_to_half_stand;     //从初始状态到半起立动作标志
+    uint8_t half_stand_to_init;     //从半起立到初始状态动作标志
+    uint8_t half_stand_to_full_stand; //从半起立到完全起立动作标志
+    uint8_t full_stand_to_half_stand; //从完全起立到半起立动作标志
     uint8_t walk_forward;
     uint8_t walk_backward;
     uint8_t move_to_left;
     uint8_t move_to_right;
     uint8_t flow_active;        //光流任务激活标志
+    uint8_t flow_data_update;   //光流数据更新标志
 } Flag;
 extern volatile Flag flag;    //动作执行状态标志变量
 

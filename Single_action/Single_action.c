@@ -132,7 +132,7 @@ void Gamepad_Control(char *param)
     {
       if((btns_flag1==0)&&(btns/100==1))//左摇杆按键按下
       {
-        btns_flag1=1;//按钮按下，不允许读取舵机角度
+        btns_flag1=1;//按钮按下，不允许重复读取舵机角度
         servo_1=Servo_ReadPos(1);
         servo_2=Servo_ReadPos(2);
         servo_3=Servo_ReadPos(3);
@@ -193,7 +193,7 @@ void Gamepad_Control(char *param)
 
       if(lt>0)//左扳机按下
       {
-
+        flag.init_to_half_stand=1;
       }
       else if(lt==0)
       {
@@ -201,7 +201,7 @@ void Gamepad_Control(char *param)
       }
       if(rt>0)//右扳机按下
       {
-
+        flag.half_stand_to_full_stand=1;
       }
       else if(rt==0)
       {

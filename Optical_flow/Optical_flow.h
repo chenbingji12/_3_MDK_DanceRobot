@@ -34,6 +34,6 @@ typedef struct {
 
 void OpticalFlow_Init(void);
 
-OpticalFlow_Data_t* OpticalFlow_ProcessData(void);
+OpticalFlow_Data_t* OpticalFlow_ProcessData(volatile uint8_t* flow_data_update);
 
 #endif

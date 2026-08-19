@@ -5,6 +5,18 @@
 
 #include "Leg_action.h"
 
+uint8_t Init_To_Half_Stand_Frame_Index = 0; // 当前从初始状态到半起立动作的帧索引
+uint16_t Init_To_Half_Stand_Step_Time = 1000; // 从初始状态到半起立动作每帧的执行时间 (毫秒)
+
+uint8_t Half_Stand_To_Init_Frame_Index = 15; // 当前从半起立到初始状态动作的帧索引
+uint16_t Half_Stand_To_Init_Step_Time = 1000; // 从半起立到初始状态动作每帧的执行时间 (毫秒)
+
+uint8_t Half_Stand_To_Full_Stand_Frame_Index = 0; // 当前从半起立到完全起立动作的帧索引
+uint16_t Half_Stand_To_Full_Stand_Step_Time = 1000; // 从半起立到完全起立动作每帧的执行时间 (毫秒)
+
+uint8_t Full_Stand_To_Half_Stand_Frame_Index = 15; // 当前从完全起立到半起立动作的帧索引
+uint16_t Full_Stand_To_Half_Stand_Step_Time = 1000; // 从完全起立到半起立动作每帧的执行时间 (毫秒)
+
 uint8_t walk_forward_frame_index = 0; // 当前行走前进动作的帧索引
 uint16_t Walk_Forward_Step_Time = 1000; // 行走前进动作每帧的执行时间 (毫秒)
 
@@ -14,10 +26,10 @@ uint16_t Walk_Forward_Step_Time = 1000; // 行走前进动作每帧的执行时�
  * @param   frame_index: 当前帧索引
  * @return  所需时间 (毫秒)
  */
-static uint16_t Max_Frame_Time(const uint16_t array[][15][3], uint8_t frame_index)
+static uint16_t Max_Frame_Time(const uint16_t array[][16][3], uint8_t frame_index)
 {
     uint16_t max_time = 0;
-    for (uint8_t i = 0; i < 15; i++)
+    for (uint8_t i = 0; i < 16; i++)
     {
         if (array[frame_index][i][2] > max_time)
         {
@@ -31,11 +43,13 @@ static uint16_t Max_Frame_Time(const uint16_t array[][15][3], uint8_t frame_inde
  * @brief   将数据发送给舵机
  * @param   array: 舵机数据数组
  * @param   index: 当前帧索引
+ * @param   direction: 数据发送方向,默认为1，表示正向移动；为-1表示反向移动
  */
-static void Send_Data_to_Servo(const uint16_t array[][15][3], uint8_t index)
+static void Send_Data_to_Servo(const uint16_t array[][16][3], uint8_t index)
 {
-    for (uint8_t i = 0; i < 15; i++) {
-        Servo_Write((uint8_t)array[index][i][0],array[index][i][1],array[index][i][2]);
+    for (uint8_t i = 0; i < 16; i++) {
+      Servo_Write((uint8_t)array[index][i][0], array[index][i][1],
+                  array[index][i][2]);
     }
 }
 
@@ -43,10 +57,70 @@ static void Send_Data_to_Servo(const uint16_t array[][15][3], uint8_t index)
  * @brief   腿部动作表
  */
 LegAction leg_action_table[] = {
+    {Init_To_Half_Stand, 0, &Init_To_Half_Stand_Step_Time, (uint8_t*)&flag.init_to_half_stand},
+    {Half_Stand_To_Init, 0, &Half_Stand_To_Init_Step_Time, (uint8_t*)&flag.half_stand_to_init},
+    {Half_Stand_To_Full_Stand, 0, &Half_Stand_To_Full_Stand_Step_Time, (uint8_t*)&flag.half_stand_to_full_stand},
+    {Full_Stand_To_Half_Stand, 0, &Full_Stand_To_Half_Stand_Step_Time, (uint8_t*)&flag.full_stand_to_half_stand},
     {Walk_Forward, 0, &Walk_Forward_Step_Time, (uint8_t*)&flag.walk_forward},
 };
 
 const uint8_t leg_action_count = sizeof(leg_action_table) / sizeof(leg_action_table[0]); // 腿部动作表中动作的数量
+
+/**
+ * @brief   从初始状态到半起立动作的执行函数
+ */
+void Init_To_Half_Stand(void)
+{
+    Send_Data_to_Servo(Init_To_Half_Stand_Data, Init_To_Half_Stand_Frame_Index); // 发送当前帧的数据给舵机
+    Init_To_Half_Stand_Step_Time = Max_Frame_Time(Init_To_Half_Stand_Data, Init_To_Half_Stand_Frame_Index); // 计算当前帧所需的时间
+    Init_To_Half_Stand_Frame_Index = (Init_To_Half_Stand_Frame_Index + 1) % Init_To_Half_Stand_Count; // 更新帧索引
+    if (Init_To_Half_Stand_Frame_Index == 0)
+    {
+        flag.init_to_half_stand = 0;
+    }
+}
+
+/**
+ * @brief   从半起立到初始状态动作的执行函数
+ */
+void Half_Stand_To_Init(void)
+{
+    Send_Data_to_Servo(Init_To_Half_Stand_Data, Half_Stand_To_Init_Frame_Index); // 发送当前帧的数据给舵机
+    Half_Stand_To_Init_Step_Time = Max_Frame_Time(Init_To_Half_Stand_Data, Half_Stand_To_Init_Frame_Index); // 计算当前帧所需的时间
+    Half_Stand_To_Init_Frame_Index = (Half_Stand_To_Init_Frame_Index -1) % Init_To_Half_Stand_Count; // 更新帧索引
+    if (Half_Stand_To_Init_Frame_Index == 15)
+    {
+        flag.half_stand_to_init = 0;
+    }
+}
+
+/**
+ * @brief   从半起立到完全起立动作的执行函数
+ */
+void Half_Stand_To_Full_Stand(void)
+{
+    Send_Data_to_Servo(Half_Stand_To_Full_Stand_Data, Half_Stand_To_Full_Stand_Frame_Index); // 发送当前帧的数据给舵机
+    Half_Stand_To_Full_Stand_Step_Time = Max_Frame_Time(Half_Stand_To_Full_Stand_Data, Half_Stand_To_Full_Stand_Frame_Index); // 计算当前帧所需的时间
+    Half_Stand_To_Full_Stand_Frame_Index = (Half_Stand_To_Full_Stand_Frame_Index + 1) % Half_Stand_To_Full_Stand_Count; // 更新帧索引
+    if (Half_Stand_To_Full_Stand_Frame_Index == 0)
+    {
+        flag.half_stand_to_full_stand = 0;
+    }
+}
+
+/**
+ * @brief   从完全起立到半起立动作的执行函数
+ */
+void Full_Stand_To_Half_Stand(void)
+{
+    Send_Data_to_Servo(Half_Stand_To_Full_Stand_Data, Full_Stand_To_Half_Stand_Frame_Index); // 发送当前帧的数据给舵机
+    Full_Stand_To_Half_Stand_Step_Time = Max_Frame_Time(Half_Stand_To_Full_Stand_Data, Full_Stand_To_Half_Stand_Frame_Index); // 计算当前帧所需的时间
+    Full_Stand_To_Half_Stand_Frame_Index = (Full_Stand_To_Half_Stand_Frame_Index - 1) % Half_Stand_To_Full_Stand_Count; // 更新帧索引
+    if (Full_Stand_To_Half_Stand_Frame_Index == 15)
+    {
+        flag.full_stand_to_half_stand = 0;
+    }
+}
 
 /**
  * @brief   前进动作的执行函数
