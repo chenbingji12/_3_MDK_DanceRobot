@@ -33,6 +33,8 @@ void Set_Servo_Pos(char *param);
 void Read_Servo_Pos(char *param);
 void Stop(char *param);
 
+void Set_pwm_Servo_TargetAngle(char *param);
+
 /*********************上位机控制IMU软件归零指令****************/
 void Zero_Yaw(char *param);
 void Off_Zero_Yaw(char *param);
@@ -46,5 +48,7 @@ void Gamepad_Control(char *param);
 
 /*******************查找命令***************/
 void Single_Action(char *name);
+
+void Receive_Bmp(char *param);
 
 #endif

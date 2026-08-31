@@ -245,6 +245,37 @@ void Gamepad_Control(char *param)
     }
 }
 
+/**
+ * @brief   设置舵机PWM角度与运行时间
+ * @param   angle  角度值
+ * @param   run_time  运行时间值
+ * @retval  None
+ * */
+void Set_pwm_Servo_TargetAngle(char *param)
+{
+    float angle,run_time;
+    if(sscanf(param,"%f %f",&angle,&run_time)==2)
+    {
+        Set_Servo_pwm_TargetAngle(angle, (uint16_t)run_time);
+    }
+}
+
+/**
+ * @brief   解析从上位机传输的节拍数据
+ * @param  param: 参数字符串
+ * @retval  无
+ */
+void Receive_Bmp(char *param)
+{
+    int bmp[10];
+    if(sscanf(param,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d",&bmp[0],&bmp[1],
+      &bmp[2],&bmp[3],&bmp[4],&bmp[5],&bmp[6],&bmp[7],&bmp[8],&bmp[9])==10)
+      {
+        (g_mode==DEBUG) && SEGGER_RTT_printf(0,"[Receive_Bmp] %d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",
+          bmp[0],bmp[1],bmp[2],bmp[3],bmp[4],bmp[5],bmp[6],bmp[7],bmp[8],bmp[9]);
+      }
+    }
+
 /***********************动作数组定义*********************/
 static const Action action[] = {
     {"reset_whole", 0, 0,Reset_Whole},
@@ -260,6 +291,9 @@ static const Action action[] = {
     {"led_test",0,0,WS2812_TestCmd},
     {"led_fill ",1,0,WS2812_FillCmd},
     {"led_off",0,0,WS2812_OffCmd},
+    {"pwm_servo_set ",1,0,Set_pwm_Servo_TargetAngle},
+    {"opticalflow_data_reset",0,0,OpticalFlow_Data_Reset},
+    {"[",1,0,Receive_Bmp},
 }; // 动作表，存放所有动作的名称和对应的函数指针
 
 /**************查找动作名称字符串在动作表中的位置***********/

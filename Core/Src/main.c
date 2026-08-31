@@ -146,6 +146,10 @@ I2S_Beat_Init();    //启动 I2S2 DMA 循环接收
 
 WS2812_Init();    //启动WS2812B灯带驱动
 
+OpticalFlow_Init();    //初始化光流传感器
+
+Servo_pwm_Init(140.0f);    //初始化舵机PWM
+
 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
 
   printf("Hello World!\n");
@@ -191,6 +195,10 @@ HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//LED 点亮
       HAL_HalfDuplex_EnableReceiver(&huart1);
       HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t*)uart1_rx_buf, sizeof(uart1_rx_buf));  //重新开启DMA接收
     }
+
+    OpticalFlow_Data_t* flow_data = OpticalFlow_ProcessData(&flag.flow_data_update);
+    float x=flow_data->distance_x;
+    float y=flow_data->distance_y;
 
     Leg_Action_Process();    //腿部动作处理函数
 
@@ -339,6 +347,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
   if (htim->Instance == TIM10) // 20ms 中断一次
   {
+    Update_Servo_pwm_Angle();//更新舵机角度
   }
 
   if (htim->Instance == TIM11) // 15ms 中断一次

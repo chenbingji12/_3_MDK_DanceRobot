@@ -29,7 +29,7 @@
 /* Private variables ---------------------------------------------------------*/
 static UART_HandleTypeDef *s_huart = NULL;    /* USART句柄 */
 static uint8_t s_dma_buf[IMU_DMA_BUF_SIZE];   /* DMA循环接收缓冲区 */
-static IMU_Data_t s_imu_data = {0};           /* IMU数据(全局唯一实例) */
+static IMU_Data_t s_imu_data = {0};           /* IMU数据 */
 
 /* 帧解析状态 */
 typedef enum {

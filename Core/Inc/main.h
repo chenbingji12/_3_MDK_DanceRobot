@@ -50,6 +50,7 @@ extern "C" {
 #include "Body_action.h"
 #include "Optical_flow.h"
 #include "WS2812.h"
+#include "Servo_pwm.h"
 
 /* USER CODE END Includes */
 

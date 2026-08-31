@@ -6,6 +6,7 @@
 #define __OPTICAL_FLOW_H
 
 #include "main.h"
+#include "i2c.h"
 
 extern I2C_HandleTypeDef hi2c1;    //I2C1句柄
 
@@ -35,5 +36,7 @@ typedef struct {
 void OpticalFlow_Init(void);
 
 OpticalFlow_Data_t* OpticalFlow_ProcessData(volatile uint8_t* flow_data_update);
+
+void OpticalFlow_Data_Reset(char* param);
 
 #endif
